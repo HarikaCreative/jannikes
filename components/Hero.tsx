@@ -54,7 +54,7 @@ export default function Hero({ onBooking }: HeroProps) {
         >
           <button
             onClick={onBooking}
-            className="px-8 py-4 bg-gradient-to-r from-cerise to-orange text-white text-lg font-semibold rounded-full hover:shadow-2xl hover:scale-105 transition-all"
+            className="px-8 py-4 bg-cerise hover:bg-cerise/90 text-white text-lg font-semibold rounded-full hover:shadow-2xl hover:scale-105 transition-all"
           >
             Be om tilbud
           </button>

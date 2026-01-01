@@ -14,7 +14,7 @@ const cateringPackages = [
     name: 'Lett & Leken',
     dishes: 6,
     price: '495',
-    color: 'from-mint to-turkis',
+    color: 'orange',
     description: 'Perfekt for småselskaper og hyggestunder',
     features: [
       'Sesongbaserte råvarer',
@@ -28,7 +28,7 @@ const cateringPackages = [
     name: 'Fest & Farger',
     dishes: 10,
     price: '695',
-    color: 'from-cerise to-orange',
+    color: 'turkis',
     description: 'For bursdager, jubileer og feiring',
     features: [
       'Kreative smakskombinasjoner',
@@ -43,7 +43,7 @@ const cateringPackages = [
     name: 'Den Store Festpakken',
     dishes: 15,
     price: '895',
-    color: 'from-gul to-orange',
+    color: 'cerise',
     description: 'Alt du trenger for den store festen',
     features: [
       'Komplett meny',
@@ -57,7 +57,7 @@ const cateringPackages = [
     type: 'vertinne',
     name: 'Vertinnepakke – Enkel',
     price: 'På forespørsel',
-    color: 'from-mint/80 to-turkis/80',
+    color: 'orange',
     description: 'Perfekt for små sammenkomster',
     features: [
       'Borddekking med pynt og servise',
@@ -71,7 +71,7 @@ const cateringPackages = [
     type: 'vertinne',
     name: 'Vertinnepakke – Luksus',
     price: 'På forespørsel',
-    color: 'from-cerise/80 to-orange/80',
+    color: 'turkis',
     description: 'Alt fra start til slutt',
     features: [
       'Komplett borddekking og dekorasjon',
@@ -208,9 +208,14 @@ const cateringReviews = [
 ];
 
 const galleryImages = [
-  { src: '/images/sommersalat-jannikes-catering.webp', alt: 'Fargerik sommersalat', span: 'col-span-2 row-span-2' },
-  { src: '/images/middelhavet-ost-jannikes-catering.webp', alt: 'Middelhavsmat', span: 'col-span-1 row-span-1' },
-  { src: '/images/profil3-jannikes-catering.webp', alt: 'Jannike', span: 'col-span-1 row-span-2' }
+  // Rad 1
+  { src: '/images/bitesize-jannikes-catering.webp', alt: 'Småretter - fargerike appetittvekkere', span: 'col-span-1 row-span-1' },
+  { src: '/images/sommersalat-jannikes-catering.webp', alt: 'Fargerik sommersalat med bær', span: 'col-span-1 row-span-1' },
+  { src: '/images/sandwich-jannikes-catering.webp', alt: 'Hjemmelagde smørbrød på rekke', span: 'col-span-1 row-span-1' },
+  // Rad 2 - Jannike i midten
+  { src: '/images/mediterranean-flavour-jannikes-catering.webp', alt: 'Couscous med granateple og fetaost', span: 'col-span-1 row-span-1' },
+  { src: '/images/profil3-jannikes-catering.webp', alt: 'Jannike - vertinne og kokk', span: 'col-span-1 row-span-1 ring-4 ring-cerise/30' },
+  { src: '/images/middelhavet-ost-jannikes-catering.webp', alt: 'Vannmelon med fetaost og kirsebær', span: 'col-span-1 row-span-1' },
 ];
 
 export default function CateringMenus({ onBooking }: CateringMenusProps) {
@@ -282,12 +287,12 @@ export default function CateringMenus({ onBooking }: CateringMenusProps) {
             </motion.h2>
           </div>
 
-          {/* Images Mosaic with Animations */}
+          {/* Images Mosaic - 3x2 Grid with Jannike in center */}
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ duration: 0.8 }}
-            className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-12 max-w-5xl mx-auto"
+            className="grid grid-cols-3 gap-3 md:gap-4 mb-12 max-w-4xl mx-auto"
           >
             {galleryImages.map((img, index) => (
               <motion.div
@@ -295,7 +300,7 @@ export default function CateringMenus({ onBooking }: CateringMenusProps) {
                 initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className={`relative ${img.span} h-64 md:h-80 rounded-2xl overflow-hidden shadow-lg cursor-pointer group`}
+                className={`relative aspect-square rounded-2xl overflow-hidden shadow-lg cursor-pointer group ${img.span}`}
                 onClick={() => setSelectedImage(img.src)}
               >
                 <Image
@@ -305,7 +310,7 @@ export default function CateringMenus({ onBooking }: CateringMenusProps) {
                   className="object-cover group-hover:scale-110 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300 flex items-center justify-center">
-                  <svg className="w-12 h-12 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-10 h-10 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
                   </svg>
                 </div>
@@ -360,7 +365,7 @@ export default function CateringMenus({ onBooking }: CateringMenusProps) {
                           </div>
                         )}
 
-                        <div className={`h-3 bg-gradient-to-r ${pkg.color}`} />
+                        <div className={`h-3 bg-${pkg.color}`} />
 
                         <div className="p-6">
                           <h4 className="font-display text-2xl font-bold text-brun mb-2">
@@ -404,7 +409,7 @@ export default function CateringMenus({ onBooking }: CateringMenusProps) {
 
                           <button
                             onClick={onBooking}
-                            className={`w-full py-2 bg-gradient-to-r ${pkg.color} text-white font-semibold rounded-full hover:shadow-lg transition-all text-sm`}
+                            className={`w-full py-2 bg-${pkg.color} text-white font-semibold rounded-full hover:opacity-90 hover:shadow-lg transition-all text-sm`}
                           >
                             Be om tilbud
                           </button>
@@ -450,73 +455,98 @@ export default function CateringMenus({ onBooking }: CateringMenusProps) {
             </div>
           </div>
 
-          {/* Reviews Carousel - HORIZONTAL FADE */}
-          <div className="mb-16">
-            <h3 className="font-display text-3xl font-bold text-brun text-center mb-8">
-              Tilbakemeldinger
-            </h3>
-            
-            <div className="relative max-w-3xl mx-auto">
-              <div className="overflow-hidden">
-                <AnimatePresence mode="wait" custom={reviewDirection}>
-                  <motion.div
-                    key={currentReview}
-                    custom={reviewDirection}
-                    initial={{ opacity: 0, x: reviewDirection > 0 ? 100 : -100 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    exit={{ opacity: 0, x: reviewDirection > 0 ? -100 : 100 }}
-                    transition={{ duration: 0.4 }}
-                    className="bg-white rounded-2xl shadow-lg p-8 md:p-12"
-                  >
-                    <p className="text-xl md:text-2xl text-brun/80 italic mb-6 leading-relaxed">
-                      "{cateringReviews[currentReview].short}"
-                    </p>
-                    <div className="flex justify-between items-center">
-                      <p className="font-semibold text-brun">
-                        – {cateringReviews[currentReview].name}
-                      </p>
-                      <button
-                        onClick={() => setSelectedReview(currentReview)}
-                        className="text-orange hover:text-cerise transition-colors font-medium flex items-center gap-1"
-                      >
-                        Les mer
-                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                        </svg>
-                      </button>
-                    </div>
-                  </motion.div>
-                </AnimatePresence>
-              </div>
+          {/* Reviews Section - Kompakt versjon som Yoga */}
+          <motion.div
+            className="bg-white/90 backdrop-blur-sm rounded-2xl p-4 md:p-6 shadow-lg border border-orange/10 max-w-4xl mx-auto mb-12"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: '-50px' }}
+            transition={{ duration: 0.6 }}
+          >
+            <div className="text-center mb-4">
+              <h3 className="font-display font-bold text-xl md:text-2xl text-brun">
+                Hva andre sier
+              </h3>
+            </div>
 
-              {/* Navigation */}
-              <button
-                onClick={prevReview}
-                className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 md:-translate-x-12 bg-white rounded-full p-2 shadow-lg hover:shadow-xl transition-all"
-                aria-label="Previous review"
-              >
-                <svg className="w-5 h-5 text-brun" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-                </svg>
-              </button>
-              <button
-                onClick={nextReview}
-                className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 md:translate-x-12 bg-white rounded-full p-2 shadow-lg hover:shadow-xl transition-all"
-                aria-label="Next review"
-              >
-                <svg className="w-5 h-5 text-brun" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
-              </button>
+            {/* Review Carousel */}
+            <div className="relative overflow-hidden">
+              <AnimatePresence mode="wait" custom={reviewDirection}>
+                <motion.div
+                  key={currentReview}
+                  custom={reviewDirection}
+                  initial={{ opacity: 0, x: reviewDirection > 0 ? 100 : -100 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: reviewDirection > 0 ? -100 : 100 }}
+                  transition={{ duration: 0.4 }}
+                  className="text-center px-4 md:px-8"
+                >
+                  <blockquote className="font-sans text-base md:text-lg text-brun/80 italic mb-4 max-w-2xl mx-auto leading-relaxed">
+                    "{cateringReviews[currentReview].short}"
+                  </blockquote>
+                  <div className="flex items-center justify-center gap-3">
+                    <span className="font-sans font-semibold text-brun text-sm">
+                      – {cateringReviews[currentReview].name}
+                    </span>
+                    <button
+                      onClick={() => setSelectedReview(currentReview)}
+                      className="font-sans text-orange hover:text-orange/80 underline text-xs focus:outline-none focus:ring-2 focus:ring-orange/30 rounded"
+                      aria-label={`Les hele anmeldelsen fra ${cateringReviews[currentReview].name}`}
+                    >
+                      Les mer
+                    </button>
+                  </div>
+                </motion.div>
+              </AnimatePresence>
 
-              {/* Review counter */}
-              <div className="text-center mt-4">
-                <span className="text-sm text-brun/60">
-                  {currentReview + 1} / {cateringReviews.length}
-                </span>
+              {/* Navigation - Kompakt med dots */}
+              <div className="flex items-center justify-center gap-3 mt-4">
+                <button
+                  onClick={prevReview}
+                  className="w-8 h-8 rounded-full bg-orange/10 hover:bg-orange/20 flex items-center justify-center transition-colors focus:outline-none focus:ring-2 focus:ring-orange/30"
+                  aria-label="Forrige anmeldelse"
+                >
+                  <svg className="w-4 h-4 text-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                  </svg>
+                </button>
+
+                {/* Dots */}
+                <div className="flex gap-1.5" role="tablist" aria-label="Velg anmeldelse">
+                  {cateringReviews.slice(0, 10).map((_, index) => (
+                    <button
+                      key={index}
+                      onClick={() => {
+                        setReviewDirection(index > currentReview ? 1 : -1);
+                        setCurrentReview(index);
+                      }}
+                      className={`w-2 h-2 rounded-full transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-orange/30 ${
+                        index === currentReview
+                          ? 'bg-orange w-4'
+                          : 'bg-orange/30 hover:bg-orange/50'
+                      }`}
+                      aria-label={`Anmeldelse ${index + 1}`}
+                      aria-selected={index === currentReview}
+                      role="tab"
+                    />
+                  ))}
+                  {cateringReviews.length > 10 && (
+                    <span className="text-xs text-brun/50 ml-1">+{cateringReviews.length - 10}</span>
+                  )}
+                </div>
+
+                <button
+                  onClick={nextReview}
+                  className="w-8 h-8 rounded-full bg-orange/10 hover:bg-orange/20 flex items-center justify-center transition-colors focus:outline-none focus:ring-2 focus:ring-orange/30"
+                  aria-label="Neste anmeldelse"
+                >
+                  <svg className="w-4 h-4 text-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </button>
               </div>
             </div>
-          </div>
+          </motion.div>
 
           {/* Info Box */}
           <motion.div
@@ -565,7 +595,7 @@ export default function CateringMenus({ onBooking }: CateringMenusProps) {
           >
             <button
               onClick={onBooking}
-              className="px-12 py-5 bg-gradient-to-r from-cerise to-orange text-white text-xl font-bold rounded-full hover:shadow-2xl hover:scale-105 transition-all"
+              className="px-12 py-5 bg-orange text-white text-xl font-bold rounded-full hover:opacity-90 hover:shadow-2xl hover:scale-105 transition-all"
             >
               Be om tilbud nå!
             </button>
@@ -610,43 +640,43 @@ export default function CateringMenus({ onBooking }: CateringMenusProps) {
         )}
       </AnimatePresence>
 
-      {/* Review Modal */}
+      {/* Review Modal - Som Yoga */}
       <AnimatePresence>
         {selectedReview !== null && (
           <motion.div
+            className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={() => setSelectedReview(null)}
-            className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4"
           >
             <motion.div
+              className="bg-cream rounded-2xl p-6 md:p-8 max-w-lg w-full shadow-2xl relative"
               initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.9, opacity: 0 }}
               onClick={(e) => e.stopPropagation()}
-              className="bg-white rounded-3xl shadow-2xl p-8 md:p-12 max-w-2xl w-full max-h-[80vh] overflow-y-auto"
             >
-              <div className="flex justify-between items-start mb-6">
-                <h3 className="font-display text-3xl font-bold text-brun">
-                  Tilbakemelding
-                </h3>
+              <div className="flex justify-between items-start mb-4">
+                <span className="inline-block px-3 py-1 bg-orange/15 text-orange font-sans text-sm font-medium rounded-full">
+                  🍽️ Catering opplevelse
+                </span>
                 <button
                   onClick={() => setSelectedReview(null)}
-                  className="text-brun/50 hover:text-brun transition-colors"
-                  aria-label="Close"
+                  className="w-8 h-8 rounded-full bg-brun/10 hover:bg-brun/20 flex items-center justify-center transition-colors focus:outline-none focus:ring-2 focus:ring-orange/30"
+                  aria-label="Lukk"
                 >
-                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-5 h-5 text-brun" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                   </svg>
                 </button>
               </div>
-              
-              <p className="text-lg text-brun/80 leading-relaxed mb-6">
+
+              <blockquote className="font-sans text-brun/80 leading-relaxed mb-6 italic">
                 "{cateringReviews[selectedReview].quote}"
-              </p>
-              
-              <p className="font-semibold text-brun text-xl">
+              </blockquote>
+
+              <p className="font-sans font-semibold text-brun text-xl">
                 – {cateringReviews[selectedReview].name}
               </p>
             </motion.div>
@@ -664,7 +694,7 @@ export default function CateringMenus({ onBooking }: CateringMenusProps) {
         >
           <button
             onClick={onBooking}
-            className="px-8 py-4 bg-gradient-to-r from-cerise to-orange text-white font-bold rounded-full shadow-2xl hover:scale-105 transition-all flex items-center gap-2"
+            className="px-8 py-4 bg-orange text-white font-bold rounded-full shadow-2xl hover:opacity-90 hover:scale-105 transition-all flex items-center gap-2"
           >
             Be om tilbud nå!
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
