@@ -221,77 +221,95 @@ export default function RetreatChef({ onBooking }: RetreatChefProps) {
             </motion.div>
           </div>
 
-          {/* Reviews Carousel */}
-          <div className="mt-20">
-            <h3 className="font-display text-3xl font-bold text-brun text-center mb-8">
-              Tilbakemeldinger fra retreats
-            </h3>
-            
-            <div className="relative max-w-3xl mx-auto">
-              <div className="overflow-hidden">
-                <AnimatePresence mode="wait" custom={reviewDirection}>
-                  <motion.div
-                    key={currentReview}
-                    custom={reviewDirection}
-                    initial={{ opacity: 0, x: reviewDirection > 0 ? 100 : -100 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    exit={{ opacity: 0, x: reviewDirection > 0 ? -100 : 100 }}
-                    transition={{ duration: 0.4 }}
-                    className="bg-white rounded-2xl shadow-lg p-8 md:p-12"
-                  >
-                    <div className="flex items-center gap-2 mb-4">
-                      <span className="text-2xl">🧘</span>
-                      <span className="text-sm text-turkis font-medium uppercase tracking-wide">Retreat opplevelse</span>
-                    </div>
-                    <p className="text-xl md:text-2xl text-brun/80 italic mb-6 leading-relaxed">
-                      "{retreatReviews[currentReview].short}"
-                    </p>
-                    <div className="flex justify-between items-center">
-                      <p className="font-semibold text-brun">
-                        – {retreatReviews[currentReview].name}
-                      </p>
-                      <button
-                        onClick={() => setSelectedReview(currentReview)}
-                        className="text-orange hover:text-cerise transition-colors font-medium flex items-center gap-1"
-                      >
-                        Les mer
-                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                        </svg>
-                      </button>
-                    </div>
-                  </motion.div>
-                </AnimatePresence>
-              </div>
+          {/* Reviews Section - Kompakt versjon som Yoga */}
+          <motion.div
+            className="bg-white/90 backdrop-blur-sm rounded-2xl p-4 md:p-6 shadow-lg border border-cerise/10 max-w-4xl mx-auto mt-16"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: '-50px' }}
+            transition={{ duration: 0.6 }}
+          >
+            <div className="text-center mb-4">
+              <h3 className="font-display font-bold text-xl md:text-2xl text-brun">
+                Hva andre sier
+              </h3>
+            </div>
 
-              {/* Navigation */}
-              <button
-                onClick={prevReview}
-                className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 md:-translate-x-12 bg-white rounded-full p-2 shadow-lg hover:shadow-xl transition-all"
-                aria-label="Previous review"
-              >
-                <svg className="w-5 h-5 text-brun" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-                </svg>
-              </button>
-              <button
-                onClick={nextReview}
-                className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 md:translate-x-12 bg-white rounded-full p-2 shadow-lg hover:shadow-xl transition-all"
-                aria-label="Next review"
-              >
-                <svg className="w-5 h-5 text-brun" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
-              </button>
+            {/* Review Carousel */}
+            <div className="relative overflow-hidden">
+              <AnimatePresence mode="wait" custom={reviewDirection}>
+                <motion.div
+                  key={currentReview}
+                  custom={reviewDirection}
+                  initial={{ opacity: 0, x: reviewDirection > 0 ? 100 : -100 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: reviewDirection > 0 ? -100 : 100 }}
+                  transition={{ duration: 0.4 }}
+                  className="text-center px-4 md:px-8"
+                >
+                  <blockquote className="font-sans text-base md:text-lg text-brun/80 italic mb-4 max-w-2xl mx-auto leading-relaxed">
+                    "{retreatReviews[currentReview].short}"
+                  </blockquote>
+                  <div className="flex items-center justify-center gap-3">
+                    <span className="font-sans font-semibold text-brun text-sm">
+                      – {retreatReviews[currentReview].name}
+                    </span>
+                    <button
+                      onClick={() => setSelectedReview(currentReview)}
+                      className="font-sans text-cerise hover:text-cerise/80 underline text-xs focus:outline-none focus:ring-2 focus:ring-cerise/30 rounded"
+                      aria-label={`Les hele anmeldelsen fra ${retreatReviews[currentReview].name}`}
+                    >
+                      Les mer
+                    </button>
+                  </div>
+                </motion.div>
+              </AnimatePresence>
 
-              {/* Review counter */}
-              <div className="text-center mt-4">
-                <span className="text-sm text-brun/60">
-                  {currentReview + 1} / {retreatReviews.length}
-                </span>
+              {/* Navigation - Kompakt med dots */}
+              <div className="flex items-center justify-center gap-3 mt-4">
+                <button
+                  onClick={prevReview}
+                  className="w-8 h-8 rounded-full bg-cerise/10 hover:bg-cerise/20 flex items-center justify-center transition-colors focus:outline-none focus:ring-2 focus:ring-cerise/30"
+                  aria-label="Forrige anmeldelse"
+                >
+                  <svg className="w-4 h-4 text-cerise" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                  </svg>
+                </button>
+
+                {/* Dots */}
+                <div className="flex gap-1.5" role="tablist" aria-label="Velg anmeldelse">
+                  {retreatReviews.map((_, index) => (
+                    <button
+                      key={index}
+                      onClick={() => {
+                        setReviewDirection(index > currentReview ? 1 : -1);
+                        setCurrentReview(index);
+                      }}
+                      className={`w-2 h-2 rounded-full transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-cerise/30 ${
+                        index === currentReview
+                          ? 'bg-cerise w-4'
+                          : 'bg-cerise/30 hover:bg-cerise/50'
+                      }`}
+                      aria-label={`Anmeldelse ${index + 1}`}
+                      aria-selected={index === currentReview}
+                      role="tab"
+                    />
+                  ))}
+                </div>
+
+                <button
+                  onClick={nextReview}
+                  className="w-8 h-8 rounded-full bg-cerise/10 hover:bg-cerise/20 flex items-center justify-center transition-colors focus:outline-none focus:ring-2 focus:ring-cerise/30"
+                  aria-label="Neste anmeldelse"
+                >
+                  <svg className="w-4 h-4 text-cerise" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </button>
               </div>
             </div>
-          </div>
+          </motion.div>
 
           {/* Bottom CTA */}
           <motion.div
@@ -313,46 +331,43 @@ export default function RetreatChef({ onBooking }: RetreatChefProps) {
         </div>
       </section>
 
-      {/* Review Modal */}
+      {/* Review Modal - Som Yoga */}
       <AnimatePresence>
         {selectedReview !== null && (
           <motion.div
+            className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={() => setSelectedReview(null)}
-            className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4"
           >
             <motion.div
+              className="bg-cream rounded-2xl p-6 md:p-8 max-w-lg w-full shadow-2xl relative"
               initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.9, opacity: 0 }}
               onClick={(e) => e.stopPropagation()}
-              className="bg-white rounded-3xl shadow-2xl p-8 md:p-12 max-w-2xl w-full max-h-[80vh] overflow-y-auto"
             >
-              <div className="flex justify-between items-start mb-6">
-                <div className="flex items-center gap-2">
-                  <span className="text-2xl">🧘</span>
-                  <h3 className="font-display text-2xl font-bold text-brun">
-                    Retreat tilbakemelding
-                  </h3>
-                </div>
+              <div className="flex justify-between items-start mb-4">
+                <span className="inline-block px-3 py-1 bg-cerise/15 text-cerise font-sans text-sm font-medium rounded-full">
+                  🧘 Retreat opplevelse
+                </span>
                 <button
                   onClick={() => setSelectedReview(null)}
-                  className="text-brun/50 hover:text-brun transition-colors"
-                  aria-label="Close"
+                  className="w-8 h-8 rounded-full bg-brun/10 hover:bg-brun/20 flex items-center justify-center transition-colors focus:outline-none focus:ring-2 focus:ring-cerise/30"
+                  aria-label="Lukk"
                 >
-                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-5 h-5 text-brun" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                   </svg>
                 </button>
               </div>
-              
-              <p className="text-lg text-brun/80 leading-relaxed mb-6">
+
+              <blockquote className="font-sans text-brun/80 leading-relaxed mb-6 italic">
                 "{retreatReviews[selectedReview].quote}"
-              </p>
-              
-              <p className="font-semibold text-brun text-xl">
+              </blockquote>
+
+              <p className="font-sans font-semibold text-brun text-xl">
                 – {retreatReviews[selectedReview].name}
               </p>
             </motion.div>
