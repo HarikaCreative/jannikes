@@ -30,11 +30,11 @@ export async function POST(request: NextRequest) {
       from: `"Jannikes.no Kontaktskjema" <${process.env.SMTP_USER}>`,
       to: process.env.CONTACT_EMAIL,
       replyTo: epost,
-      subject: `Ny forespørsel: ${type}`,
+      subject: `Ny henvendelse: ${type}`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
           <h2 style="color: #3E2723; border-bottom: 2px solid #E91E63; padding-bottom: 10px;">
-            Ny forespørsel fra jannikes.no
+            Ny henvendelse fra jannikes.no
           </h2>
           
           <table style="width: 100%; border-collapse: collapse; margin-top: 20px;">
@@ -67,7 +67,7 @@ export async function POST(request: NextRequest) {
         </div>
       `,
       text: `
-Ny forespørsel fra jannikes.no
+Ny henvendelse fra jannikes.no
 
 Navn: ${navn}
 E-post: ${epost}
@@ -86,7 +86,7 @@ ${melding}
   } catch (error) {
     console.error('E-postfeil:', error);
     return NextResponse.json(
-      { error: 'Kunne ikke sende melding. Prøv igjen senere.' },
+      { error: 'Kunne ikke sende melding. Vennligst prov igjen senere.' },
       { status: 500 }
     );
   }
