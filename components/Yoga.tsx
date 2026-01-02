@@ -267,7 +267,7 @@ export default function Yoga({ onBooking }: YogaProps) {
             {/* About Text */}
             <motion.article className="prose prose-lg max-w-none" variants={fadeInUp}>
               <p className="font-sans text-brun/90 leading-relaxed text-lg">
-                Jeg er sertifisert <strong>Yin Yoga</strong> og <strong>Yoga Nidra</strong>-instruktør med en allsidig bakgrunn. Jeg oppdaget yogaverden sent i livet og fant fort ut at dette var noe jeg brant for og som lå mitt hjerte nært.
+                Jeg er sertifisert <strong>Yin Yoga</strong> og <strong>Yoga Nidra</strong>-instruktør med en allsidig bakgrunn. Jeg oppdaget yogaverdenen sent i livet og fant fort ut at dette var noe jeg brant for og som lå mitt hjerte nært.
               </p>
               <p className="font-sans text-brun/80 leading-relaxed">
                 Som instruktør er jeg oppmerksom på elevene mine og gir justeringer og veiledninger underveis. <strong>Alle skal føle seg sett og ivaretatt.</strong> Mine klasser er en unik opplevelse der du får åpnet sansene dine gjennom bruk av eteriske oljer, og lærer teknikker for å løse opp spenninger ved hjelp av akupressur-punkter.

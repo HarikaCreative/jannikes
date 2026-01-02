@@ -574,7 +574,7 @@ anledninger.
                 <svg className="w-6 h-6 mr-3 text-orange flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
                 </svg>
-                <span><strong>Minimum:</strong> 20 personer for alle pakker</span>
+                <span><strong>Minstebestilling:</strong> 20 kuvert for alle pakker</span>
               </li>
               <li className="flex items-start">
                 <svg className="w-6 h-6 mr-3 text-orange flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
