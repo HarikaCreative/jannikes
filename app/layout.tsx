@@ -1,18 +1,18 @@
 import type { Metadata } from 'next'
-import { Fraunces, DM_Sans } from 'next/font/google'
+import { Josefin_Sans, Nunito } from 'next/font/google'
 import './globals.css'
 
-const fraunces = Fraunces({
+const josefin = Josefin_Sans({
   subsets: ['latin'],
   display: 'swap',
-  variable: '--font-fraunces',
-  weight: ['400', '500', '600', '700', '800', '900'],
+  variable: '--font-josefin',
+  weight: ['300', '400', '500', '600', '700'],
 })
 
-const dmSans = DM_Sans({
+const nunito = Nunito({
   subsets: ['latin'],
   display: 'swap',
-  variable: '--font-dm-sans',
+  variable: '--font-nunito',
   weight: ['300', '400', '500', '600', '700'],
 })
 
@@ -196,7 +196,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="no" className={`${fraunces.variable} ${dmSans.variable}`}>
+    <html lang="no" className={`${josefin.variable} ${nunito.variable}`}>
       <head>
         {/* Geo Tags for Local SEO */}
         <meta name="geo.region" content="NO-30" />
@@ -210,7 +210,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className={dmSans.className}>{children}</body>
+      <body className={nunito.className}>{children}</body>
     </html>
   )
 }

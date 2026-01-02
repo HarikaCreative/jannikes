@@ -178,30 +178,24 @@ export default function Contact({ showModal, onClose, onSubmit }: ContactProps) 
 
             {/* Right - Contact Form */}
             <motion.div variants={fadeInUp}>
-              <div className="bg-white rounded-2xl shadow-md p-6 md:p-8">
-                <h3 className="font-display text-xl font-bold text-brun mb-4">
+              <div className="bg-white p-6 md:p-8 rounded-2xl shadow-lg">
+                <h3 className="font-display text-xl font-bold text-brun mb-6">
                   Send en forespørsel
                 </h3>
 
                 {submitStatus === 'success' ? (
                   <div className="text-center py-8">
-                    <div className="bg-mint/20 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                    <div className="w-16 h-16 bg-mint/20 rounded-full flex items-center justify-center mx-auto mb-4">
                       <svg className="w-8 h-8 text-turkis" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7"/>
                       </svg>
                     </div>
-                    <p className="text-brun font-medium mb-2">Takk for din henvendelse!</p>
-                    <p className="text-brun/70 text-sm">Jeg svarer så snart jeg kan.</p>
-                    <button
-                      onClick={() => setSubmitStatus('idle')}
-                      className="mt-4 text-turkis hover:text-mint underline underline-offset-2 text-sm transition-colors"
-                    >
-                      Send ny forespørsel
-                    </button>
+                    <h4 className="font-display text-xl font-bold text-brun mb-2">Takk for din henvendelse!</h4>
+                    <p className="text-brun/70">Jeg svarer deg så snart som mulig.</p>
                   </div>
                 ) : (
                   <form onSubmit={handleSubmit} className="space-y-4">
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       <div>
                         <label htmlFor="navn" className="block text-sm font-medium text-brun mb-1">
                           Navn <span className="text-cerise">*</span>
@@ -234,7 +228,7 @@ export default function Contact({ showModal, onClose, onSubmit }: ContactProps) 
                       </div>
                     </div>
 
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       <div>
                         <label htmlFor="telefon" className="block text-sm font-medium text-brun mb-1">
                           Telefon
@@ -262,11 +256,12 @@ export default function Contact({ showModal, onClose, onSubmit }: ContactProps) 
                           className="w-full px-4 py-2.5 rounded-lg border border-brun/20 focus:border-turkis focus:ring-2 focus:ring-turkis/20 focus:outline-none transition-colors bg-white"
                         >
                           <option value="">Velg type</option>
-                          <option value="catering">Catering</option>
-                          <option value="retreat-chef">Retreat Chef</option>
-                          <option value="yoga">Privat Yoga</option>
-                          <option value="artful-balance">Artful Balance 2026</option>
-                          <option value="annet">Annet</option>
+                          <option value="Catering">Catering</option>
+                          <option value="Vertinne">Vertinne</option>
+                          <option value="Retreat kokk">Retreat kokk</option>
+                          <option value="Privat yoga">Privat yoga</option>
+                          <option value="Artful Balance 2026">Artful Balance 2026</option>
+                          <option value="Annet">Annet</option>
                         </select>
                       </div>
                     </div>

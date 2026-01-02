@@ -22,7 +22,7 @@ export default function Hero({ onBooking }: HeroProps) {
             backgroundImage: 'url(/images/artful-balance1-2025.webp)',
           }}
         />
-        {/* FORSTERKET soft fade - bred myk overgang */}
+        {/* Soft fade - bred myk overgang */}
         <div 
           className="absolute inset-0"
           style={{
@@ -43,9 +43,9 @@ export default function Hero({ onBooking }: HeroProps) {
         />
         
         <div className="max-w-md">
-          {/* Title - rises from bottom */}
+          {/* Title - CERISE - rises from bottom */}
           <motion.h1 
-            className="font-display text-4xl md:text-5xl lg:text-5xl font-bold text-brun leading-tight mb-2"
+            className="font-display text-4xl md:text-5xl lg:text-5xl font-bold text-cerise leading-tight mb-2"
             initial={{ y: 60, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.9, delay: 0.6, ease: 'easeOut' }}
@@ -53,9 +53,9 @@ export default function Hero({ onBooking }: HeroProps) {
             Jannikes verden
           </motion.h1>
           
-          {/* Tagline - rises from bottom with slight delay */}
+          {/* Tagline - CERISE - rises from bottom with slight delay */}
           <motion.h2 
-            className="font-display text-xl md:text-2xl font-semibold text-brun mb-8"
+            className="font-display text-xl md:text-2xl font-semibold text-cerise mb-8"
             initial={{ y: 50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.9, delay: 0.9, ease: 'easeOut' }}
@@ -63,7 +63,7 @@ export default function Hero({ onBooking }: HeroProps) {
             – der sansene får farge
           </motion.h2>
 
-          {/* Buttons - rise from bottom last */}
+          {/* Buttons - TURKIS - rise from bottom last */}
           <motion.div
             className="flex flex-col sm:flex-row gap-4"
             initial={{ y: 40, opacity: 0 }}
@@ -72,13 +72,13 @@ export default function Hero({ onBooking }: HeroProps) {
           >
             <button
               onClick={onBooking}
-              className="px-8 py-4 bg-cerise hover:bg-cerise/90 text-white text-lg font-semibold rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all"
+              className="px-8 py-4 bg-turkis hover:bg-turkis/90 text-white text-lg font-semibold rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all"
             >
               Be om tilbud
             </button>
             <a
               href="#retreats"
-              className="px-8 py-4 bg-transparent border-2 border-cerise text-cerise text-lg font-medium rounded-full hover:bg-cerise/10 transition-all text-center"
+              className="px-8 py-4 bg-transparent border-2 border-turkis text-turkis text-lg font-medium rounded-full hover:bg-turkis/10 transition-all text-center"
             >
               Opplevelser 2026
             </a>

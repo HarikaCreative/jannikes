@@ -20,10 +20,10 @@ const config: Config = {
         blaa: '#1565C0',
       },
       fontFamily: {
-        // Fraunces - leken, varm serif for headings
-        display: ['var(--font-fraunces)', 'Georgia', 'serif'],
-        // DM Sans - ren, moderne for body
-        sans: ['var(--font-dm-sans)', 'system-ui', 'sans-serif'],
+        // Josefin Sans - elegant, art deco-vibe for headings
+        display: ['var(--font-josefin)', 'system-ui', 'sans-serif'],
+        // Nunito - myk, vennlig sans-serif for body
+        sans: ['var(--font-nunito)', 'system-ui', 'sans-serif'],
       },
     },
   },
