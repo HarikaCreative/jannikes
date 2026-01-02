@@ -236,15 +236,21 @@ export default function CateringMenus({ onBooking }: CateringMenusProps) {
   }, []);
 
   const nextSlide = () => {
-    if (isMobile) {
-      setCurrentSlide((prev) => Math.min(prev + 1, cateringPackages.length - 1));
-    } else {
-      setCurrentSlide((prev) => Math.min(prev + 1, Math.max(0, cateringPackages.length - 3)));
-    }
+  if (isMobile) {
+    setCurrentSlide((prev) => (prev + 1) % cateringPackages.length);
+  } else {
+    const maxSlide = Math.max(0, cateringPackages.length - 3);
+    setCurrentSlide((prev) => (prev + 1) > maxSlide ? 0 : prev + 1);
+  }
   };
 
   const prevSlide = () => {
-    setCurrentSlide((prev) => Math.max(prev - 1, 0));
+    if (isMobile) {
+    setCurrentSlide((prev) => (prev - 1 + cateringPackages.length) % cateringPackages.length);
+  } else {
+    const maxSlide = Math.max(0, cateringPackages.length - 3);
+    setCurrentSlide((prev) => (prev - 1 < 0 ? maxSlide : prev - 1));
+  }
   };
 
   const nextReview = () => {
@@ -326,15 +332,23 @@ export default function CateringMenus({ onBooking }: CateringMenusProps) {
             className="max-w-3xl mx-auto text-center mb-16"
           >
             <p className="text-lg md:text-xl text-brun/80 leading-relaxed mb-4">
-              Som kokk elsker jeg å utnytte sesongens beste råvarer for å skape opplevelser som både 
-              smaker nydelig og ser ut som små kunstverk. Jeg tilbyr både fullstendig catering og 
-              vertinnetjenester, enten du har egen kokk eller ønsker at jeg tar meg av hele måltidet.
+              Som kokk elsker jeg å bruke gode råvarer til å skape matopplevelser som både smaker 
+nydelig og ser innbydende ut. Maten lages fra bunnen av og tilpasses anledningen – 
+enten du ønsker full catering eller trenger hjelp til deler av måltidet.
             </p>
             <p className="text-lg md:text-xl text-brun/80 leading-relaxed">
-              Med meg som vertinne blir dine gjester alltid godt tatt vare på – det blir god stemning, 
-              varm atmosfære og gjerne litt latter rundt bordet. Bordene dekkes ferdig med pynt eller 
-              bare servise, lekent og fargerikt eller enkelt og elegant. Jeg tilpasser og anbefaler 
-              basert på dine ønsker og anledning.
+       Jeg tilbyr både komplett catering og vertinnetjenester. Enten du har egen kokk og trenger 
+ekstra hender, eller ønsker at jeg tar ansvar for hele opplevelsen – fra planlegging til 
+servering – sørger jeg for at alt flyter sømløst.
+            </p>
+                        <p className="text-lg md:text-xl text-brun/80 leading-relaxed">
+  Med meg som vertinne blir gjestene godt ivaretatt, og stemningen lett og avslappet. Bordene 
+dekkes med omtanke, enten du ønsker et fargerikt og lekent uttrykk eller et mer enkelt og 
+elegant preg.
+            </p>
+                       <p className="text-lg md:text-xl text-brun/80 leading-relaxed">
+Jeg gir gjerne råd underveis og tilpasser meny, stil og detaljer etter dine ønsker og 
+anledninger.
             </p>
           </motion.div>
 
@@ -530,9 +544,6 @@ export default function CateringMenus({ onBooking }: CateringMenusProps) {
                       role="tab"
                     />
                   ))}
-                  {cateringReviews.length > 10 && (
-                    <span className="text-xs text-brun/50 ml-1">+{cateringReviews.length - 10}</span>
-                  )}
                 </div>
 
                 <button

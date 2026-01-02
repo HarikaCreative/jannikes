@@ -1,174 +1,144 @@
-import Link from 'next/link';
-
-export default function CookiePolicy() {
+export default function PrivacyPolicy() {
   return (
-    <div className="min-h-screen bg-cream">
-      {/* Simple Header */}
-      <nav className="bg-white/95 backdrop-blur-sm shadow-sm">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-20">
-            <Link href="/" className="flex items-center gap-3">
-              <img 
-                src="/images/android-chrome-512x512.png" 
-                alt="Jannikes Catering" 
-                className="h-12 w-12"
-              />
-              <span className="font-display text-xl text-brun">Jannikes Catering</span>
-            </Link>
-            <Link 
-              href="/" 
-              className="text-brun hover:text-orange transition-colors font-medium"
-            >
-              ← Tilbake
-            </Link>
-          </div>
-        </div>
-      </nav>
-
-      {/* Content */}
-      <main className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <h1 className="font-display text-4xl md:text-5xl font-bold text-brun mb-8">
-          Cookie Policy
+    <main className="bg-cream min-h-screen py-16 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-3xl mx-auto">
+        <h1 className="font-display text-4xl font-bold text-brun mb-8">
+          Personvernerklæring
         </h1>
         
-        <div className="prose prose-lg max-w-none">
-          <p className="text-brun/80 mb-6">
-            Sist oppdatert: 31. desember 2025
+        <div className="prose prose-lg text-brun/80 space-y-6">
+          <p className="text-sm text-brun/60">
+            Sist oppdatert: Januar 2026
           </p>
 
-          <section className="mb-8">
-            <h2 className="font-display text-2xl font-semibold text-brun mb-4">
-              1. Hva er informasjonskapsler?
+          <section>
+            <h2 className="font-display text-2xl font-bold text-brun mt-8 mb-4">
+              1. Behandlingsansvarlig
             </h2>
-            <p className="text-brun/80 leading-relaxed mb-4">
-              Informasjonskapsler (cookies) er små tekstfiler som lagres på enheten din når du 
-              besøker en nettside. De hjelper nettsiden å huske informasjon om ditt besøk, 
-              som foretrukket språk og andre innstillinger.
+            <p>
+              Jannikes Catering, ved Jannike, er behandlingsansvarlig for personopplysninger 
+              som samles inn via denne nettsiden. Vi er forpliktet til å beskytte ditt personvern 
+              og behandle dine opplysninger i samsvar med gjeldende personvernlovgivning (GDPR).
             </p>
           </section>
 
-          <section className="mb-8">
-            <h2 className="font-display text-2xl font-semibold text-brun mb-4">
-              2. Hvordan vi bruker informasjonskapsler
+          <section>
+            <h2 className="font-display text-2xl font-bold text-brun mt-8 mb-4">
+              2. Hvilke opplysninger samler vi inn?
             </h2>
-            <p className="text-brun/80 leading-relaxed mb-4">
-              Vi bruker informasjonskapsler for å:
-            </p>
-            <ul className="list-disc list-inside text-brun/80 space-y-2 ml-4">
-              <li>Gjøre nettsiden vår funksjonell og enkel å bruke</li>
-              <li>Forstå hvordan besøkende bruker vår nettside</li>
-              <li>Forbedre brukeropplevelsen</li>
-              <li>Huske dine preferanser</li>
+            <p>Vi samler kun inn opplysninger du frivillig oppgir gjennom vårt kontaktskjema:</p>
+            <ul className="list-disc pl-6 mt-2 space-y-1">
+              <li>Navn</li>
+              <li>E-postadresse</li>
+              <li>Telefonnummer (valgfritt)</li>
+              <li>Type forespørsel</li>
+              <li>Innholdet i din melding</li>
             </ul>
           </section>
 
-          <section className="mb-8">
-            <h2 className="font-display text-2xl font-semibold text-brun mb-4">
-              3. Typer informasjonskapsler vi bruker
+          <section>
+            <h2 className="font-display text-2xl font-bold text-brun mt-8 mb-4">
+              3. Hvorfor samler vi inn opplysninger?
             </h2>
-            
-            <div className="space-y-6">
-              <div className="bg-white p-6 rounded-lg border border-mint/30">
-                <h3 className="font-display text-xl font-semibold text-brun mb-3">
-                  Nødvendige informasjonskapsler
-                </h3>
-                <p className="text-brun/80 leading-relaxed">
-                  Disse er essensielle for at nettsiden skal fungere korrekt. 
-                  De kan ikke deaktiveres i våre systemer.
-                </p>
-              </div>
-
-              <div className="bg-white p-6 rounded-lg border border-turkis/30">
-                <h3 className="font-display text-xl font-semibold text-brun mb-3">
-                  Funksjonelle informasjonskapsler
-                </h3>
-                <p className="text-brun/80 leading-relaxed">
-                  Disse lar oss huske valg du gjør (som språk eller region) 
-                  og tilby forbedrede, mer personlige funksjoner.
-                </p>
-              </div>
-
-              <div className="bg-white p-6 rounded-lg border border-gul/30">
-                <h3 className="font-display text-xl font-semibold text-brun mb-3">
-                  Analyse-informasjonskapsler
-                </h3>
-                <p className="text-brun/80 leading-relaxed">
-                  Disse hjelper oss å forstå hvordan besøkende bruker vår nettside, 
-                  slik at vi kan forbedre den. All informasjon er anonymisert.
-                </p>
-              </div>
-
-              <div className="bg-white p-6 rounded-lg border border-orange/30">
-                <h3 className="font-display text-xl font-semibold text-brun mb-3">
-                  Markedsførings-informasjonskapsler
-                </h3>
-                <p className="text-brun/80 leading-relaxed">
-                  Disse brukes til å vise deg relevante annonser. 
-                  De kan også begrense hvor mange ganger du ser en annonse.
-                </p>
-              </div>
-            </div>
-          </section>
-
-          <section className="mb-8">
-            <h2 className="font-display text-2xl font-semibold text-brun mb-4">
-              4. Tredjeparts-informasjonskapsler
-            </h2>
-            <p className="text-brun/80 leading-relaxed mb-4">
-              Vi kan bruke tredjeparts-tjenester som setter informasjonskapsler på vegne av oss:
-            </p>
-            <ul className="list-disc list-inside text-brun/80 space-y-2 ml-4">
-              <li><strong>Google Analytics:</strong> For nettstedsanalyse</li>
-              <li><strong>Sosiale medier:</strong> For deling av innhold</li>
+            <p>Vi bruker dine opplysninger til følgende formål:</p>
+            <ul className="list-disc pl-6 mt-2 space-y-1">
+              <li>Besvare din henvendelse</li>
+              <li>Sende deg tilbud på forespurte tjenester</li>
+              <li>Administrere bookinger og avtaler</li>
             </ul>
           </section>
 
-          <section className="mb-8">
-            <h2 className="font-display text-2xl font-semibold text-brun mb-4">
-              5. Hvordan kontrollere informasjonskapsler
+          <section>
+            <h2 className="font-display text-2xl font-bold text-brun mt-8 mb-4">
+              4. Rettslig grunnlag
             </h2>
-            <p className="text-brun/80 leading-relaxed mb-4">
-              Du kan kontrollere og/eller slette informasjonskapsler etter eget ønske. 
-              De fleste nettlesere tillater deg å:
+            <p>
+              Behandlingen av dine personopplysninger er basert på ditt samtykke, 
+              som du gir når du sender inn kontaktskjemaet. Du kan når som helst 
+              trekke tilbake ditt samtykke ved å kontakte oss.
             </p>
-            <ul className="list-disc list-inside text-brun/80 space-y-2 ml-4">
-              <li>Se hvilke informasjonskapsler du har og slette dem individuelt</li>
-              <li>Blokkere tredjeparts-informasjonskapsler</li>
-              <li>Blokkere informasjonskapsler fra bestemte nettsteder</li>
-              <li>Blokkere alle informasjonskapsler</li>
-              <li>Slette alle informasjonskapsler når du lukker nettleseren</li>
+          </section>
+
+          <section>
+            <h2 className="font-display text-2xl font-bold text-brun mt-8 mb-4">
+              5. Lagring og sletting
+            </h2>
+            <p>
+              Vi lagrer dine opplysninger så lenge det er nødvendig for å behandle 
+              din henvendelse og oppfylle eventuelle avtaler. Opplysninger slettes 
+              når de ikke lenger er nødvendige, med mindre vi er pålagt å oppbevare 
+              dem av juridiske årsaker.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="font-display text-2xl font-bold text-brun mt-8 mb-4">
+              6. Deling av opplysninger
+            </h2>
+            <p>
+              Vi deler ikke dine personopplysninger med tredjeparter, med mindre det 
+              er nødvendig for å levere våre tjenester eller vi er pålagt det ved lov.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="font-display text-2xl font-bold text-brun mt-8 mb-4">
+              7. Dine rettigheter
+            </h2>
+            <p>Du har rett til å:</p>
+            <ul className="list-disc pl-6 mt-2 space-y-1">
+              <li>Be om innsyn i hvilke opplysninger vi har om deg</li>
+              <li>Be om retting av uriktige opplysninger</li>
+              <li>Be om sletting av dine opplysninger</li>
+              <li>Trekke tilbake ditt samtykke</li>
+              <li>Klage til Datatilsynet</li>
             </ul>
-            <p className="text-brun/80 leading-relaxed mt-4">
-              <strong>Merk:</strong> Hvis du velger å blokkere informasjonskapsler, 
-              kan det hende at enkelte funksjoner på nettsiden ikke fungerer optimalt.
+          </section>
+
+          <section>
+            <h2 className="font-display text-2xl font-bold text-brun mt-8 mb-4">
+              8. Informasjonskapsler (cookies)
+            </h2>
+            <p>
+              Denne nettsiden bruker kun teknisk nødvendige informasjonskapsler 
+              for å sikre at nettsiden fungerer som den skal. Vi bruker ikke 
+              sporings- eller markedsføringscookies.
             </p>
           </section>
 
-          <section className="mb-8">
-            <h2 className="font-display text-2xl font-semibold text-brun mb-4">
-              6. Oppdateringer av denne policyen
+          <section>
+            <h2 className="font-display text-2xl font-bold text-brun mt-8 mb-4">
+              9. Kontakt
             </h2>
-            <p className="text-brun/80 leading-relaxed mb-4">
-              Vi kan oppdatere vår Cookie Policy fra tid til annen. Vi vil varsle deg 
-              om eventuelle endringer ved å publisere den nye Cookie Policy på denne siden.
+            <p>
+              Har du spørsmål om vår behandling av personopplysninger, kan du kontakte oss på:
             </p>
-          </section>
-
-          <section className="mb-8">
-            <h2 className="font-display text-2xl font-semibold text-brun mb-4">
-              7. Kontakt oss
-            </h2>
-            <p className="text-brun/80 leading-relaxed mb-4">
-              Hvis du har spørsmål om vår bruk av informasjonskapsler, 
-              vennligst kontakt oss:
+            <p className="mt-2">
+              <strong>E-post:</strong>{' '}
+              <a href="mailto:jannike@jannikes.no" className="text-turkis hover:underline">
+                jannike@jannikes.no
+              </a>
+              <br />
+              <strong>Telefon:</strong>{' '}
+              <a href="tel:+4793033966" className="text-turkis hover:underline">
+                930 33 966
+              </a>
             </p>
-            <div className="bg-white p-6 rounded-lg border border-orange/20">
-              <p className="text-brun/80"><strong>E-post:</strong> jannike@jannikes.no</p>
-              <p className="text-brun/80"><strong>Telefon:</strong> 930 33 966</p>
-            </div>
           </section>
         </div>
-      </main>
-    </div>
+
+        <div className="mt-12 pt-8 border-t border-brun/10">
+          <a 
+            href="/"
+            className="inline-flex items-center text-turkis hover:text-mint transition-colors"
+          >
+            <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+            </svg>
+            Tilbake til forsiden
+          </a>
+        </div>
+      </div>
+    </main>
   );
 }

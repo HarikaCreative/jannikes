@@ -198,7 +198,7 @@ export default function ArtfulBalance({ onBooking }: ArtfulBalanceProps) {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-orange/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </button>
-                <p className="text-brun/60 text-sm font-sans text-center">I studio</p>
+                <p className="text-brun/60 text-sm font-sans text-center">Skapende øyeblikk</p>
               </motion.div>
 
               {/* Lite bilde øverst - Karianne & Jannike */}
@@ -218,7 +218,7 @@ export default function ArtfulBalance({ onBooking }: ArtfulBalanceProps) {
                   <div className="absolute inset-0 bg-orange/10 group-hover:bg-orange/20 transition-colors duration-300" />
                 </button>
                 <p className="text-brun/60 text-xs font-sans text-center leading-tight">
-                  Karianne Næsse og Jannike Heitun Kjuus
+                  Kari-Anne og Jannike
                 </p>
               </motion.div>
 
@@ -254,12 +254,11 @@ export default function ArtfulBalance({ onBooking }: ArtfulBalanceProps) {
             {/* About Text */}
             <motion.article className="prose prose-lg max-w-none" variants={fadeInUp}>
               <p className="font-sans text-brun/90 leading-relaxed text-lg mb-5">
-                <strong>Artful Balance</strong> er en unik retreat som forener kreativ utfoldelse, 
-                indre ro og kulinariske gleder. Her får du muligheten til å utforske din kreative 
-                side gjennom intuitivt maleri – ingen forkunnskaper kreves.
+                <strong>Artful Balance</strong> er en kreativ reise der skapende prosesser, 
+                ro og gode måltider møtes – i vakre omgivelser.
               </p>
               <p className="font-sans text-brun/80 leading-relaxed mb-5">
-                Sammen med billedkunstner{' '}
+                Du blir varsomt guidet gjennom intuitiv maling av billedkunstner{' '}
                 <a 
                   href={LINKS.kanartWebsite}
                   target="_blank"
@@ -268,13 +267,16 @@ export default function ArtfulBalance({ onBooking }: ArtfulBalanceProps) {
                 >
                   Kari-Anne Næssø
                 </a>
-                {' '}guider vi deg gjennom en prosess der du skaper ditt helt eget kunstverk. 
-                Dagen balanseres med Yin Yoga og Yoga Nidra for dyp avspenning, 
-                og nytes med nøye komponert gourmetmat.
+                , i en trygg ramme som gir rom for personlig uttrykk, helt uten krav til forkunnskaper.
+              </p>
+              <p className="font-sans text-brun/80 leading-relaxed mb-5">
+                Dagene balanseres med rolige økter i Yin Yoga og Yoga Nidra, som gir rom for 
+                avspenning og tilstedeværelse. Opplevelsen rundes av med smakfull mat laget 
+                fra bunnen av, med omtanke for både mennesker og råvarer.
               </p>
               <p className="font-sans text-brun/80 leading-relaxed">
-                Retreaten finner sted i vakre Spania, der omgivelsene inspirerer og 
-                solen varmer. Følg med på{' '}
+                Den kreative reisen finner sted i naturskjønne omgivelser i Spania, der lys, 
+                varme og natur gir rom for inspirasjon og hvile. Følg reisen på{' '}
                 <a 
                   href={LINKS.artfulBalanceInstagram}
                   target="_blank"
@@ -283,7 +285,7 @@ export default function ArtfulBalance({ onBooking }: ArtfulBalanceProps) {
                 >
                   @artfulbalance2026
                 </a>
-                {' '}for oppdateringer, eller se mer av Kari-Annes kunst på{' '}
+                , eller se mer av Kari-Annes arbeid på{' '}
                 <a 
                   href={LINKS.kanartInstagram}
                   target="_blank"

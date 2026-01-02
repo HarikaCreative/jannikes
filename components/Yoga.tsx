@@ -282,15 +282,16 @@ export default function Yoga({ onBooking }: YogaProps) {
                 >
                   Actic Asker
                 </a>
-                {' '}– følg gjerne{' '}
+                , følg meg gjerne på{' '}
                 <a 
-                  href={ACTIC_INSTAGRAM}
+                  href="https://www.instagram.com/jannikescatering"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-turkis hover:text-turkis/80 underline decoration-turkis/30 hover:decoration-turkis transition-colors"
                 >
-                  yoga på Instagram
-                </a>.
+                  Instagram
+                </a>
+                {' '}for yogaopplevelser og annen inspirasjon, eller bestill en privat time.
               </p>
             </motion.article>
 

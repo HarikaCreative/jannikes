@@ -30,7 +30,7 @@ export default function Hero({ onBooking }: HeroProps) {
           transition={{ duration: 0.8 }}
         >
           <h1 className="font-display text-5xl md:text-7xl lg:text-8xl font-bold text-brun mb-6 leading-tight">
-            Fargerik mat.<br />
+            <span className="text-orange">Fargerik mat.</span><br />
             Varme mennesker.<br />
             <span className="text-cerise">Kreative opplevelser.</span>
           </h1>
@@ -42,8 +42,7 @@ export default function Hero({ onBooking }: HeroProps) {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="text-xl md:text-2xl text-brun/80 mb-12 max-w-3xl mx-auto"
         >
-          Fra sesongbasert catering til yoga og retreats – 
-          jeg kombinerer mat som kunst med kreativ livsstil.
+          Mat laget med omtanke, opplevelser som samler og en livsstil med plass til ro
         </motion.p>
 
         <motion.div
@@ -59,10 +58,10 @@ export default function Hero({ onBooking }: HeroProps) {
             Be om tilbud
           </button>
           <a
-            href="#artful-balance"
-            className="px-8 py-4 bg-gradient-to-r from-gul to-orange text-white text-lg font-semibold rounded-full hover:shadow-2xl hover:scale-105 transition-all"
+            href="#retreats"
+            className="px-8 py-4 bg-orange text-white text-lg font-semibold rounded-full hover:bg-orange/90 hover:shadow-2xl hover:scale-105 transition-all"
           >
-            Meld deg på Kurs og retreat 2026
+            Meld deg på kurs og workshops i 2026
           </a>
         </motion.div>
 

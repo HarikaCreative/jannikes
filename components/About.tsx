@@ -22,18 +22,18 @@ export default function About() {
   const images = [
     {
       src: '/images/profil2-jannikes-catering.webp',
-      alt: 'Jannike som retreat chef i kjøkkenet',
-      caption: 'Retreat chef i Spania'
+      alt: 'Jannike lager mat i kjøkkenet',
+      caption: 'Der maten blir til'
     },
     {
       src: '/images/frida-bord-jannikes-catering.webp',
       alt: 'Fargerikt Frida Kahlo-inspirert borddekning',
-      caption: 'Frida-inspirert styling'
+      caption: 'Frida-inspirert borddekking'
     },
     {
       src: '/images/energi-påfyll-jannikes-catering.webp',
       alt: 'Kunstnerisk antipasti-fat med spekemat og frukt',
-      caption: 'Energi-påfyll med stil'
+      caption: 'Farger på fatet'
     }
   ];
 
@@ -51,7 +51,6 @@ export default function About() {
             {/* Images - Mosaic Layout: 2 small left, 1 large right */}
             <motion.div variants={fadeInUp} className="order-2 lg:order-1">
               <div className="grid grid-cols-2 gap-3 h-full">
-                {/* Left column - 2 small stacked images */}
                 <div className="flex flex-col gap-3">
                   <div>
                     <button
@@ -68,7 +67,6 @@ export default function About() {
                     </button>
                     <p className="text-sm text-brun/60 mt-2 text-center">{images[1].caption}</p>
                   </div>
-                  
                   <div>
                     <button
                       onClick={() => setLightboxImage(images[2].src)}
@@ -85,8 +83,6 @@ export default function About() {
                     <p className="text-sm text-brun/60 mt-2 text-center">{images[2].caption}</p>
                   </div>
                 </div>
-                
-                {/* Right column - Large profile image */}
                 <div className="flex flex-col">
                   <button
                     onClick={() => setLightboxImage(images[0].src)}
@@ -114,18 +110,19 @@ export default function About() {
               <div className="space-y-4 text-brun/80">
                 <p>
                   Mat er min lidenskap, og jeg elsker å skape opplevelser som både smaker fantastisk 
-                  og ser ut som kunstverk.
+                  og gleder øyet.
                 </p>
-                
                 <p>
-                  Som <strong className="text-turkis">catering-kokk</strong> spesialiserer jeg meg på 
-                  sesongbasert mat med fokus på fargerike, kreative retter. Jeg tilbyr både tradisjonelle 
-                  og veganske menyer – alltid tilpasset dine ønsker.
+                  For meg handler mat om mer enn smak – det handler om stemning, farger og mennesker.
                 </p>
-                
                 <p>
-                  Som <strong className="text-turkis">yogainstruktør</strong> underviser jeg privat og 
-                  hos{' '}
+                  Som <strong className="text-turkis">cateringkokk</strong> lager jeg mat fra bunnen av, 
+                  med fokus på kreative, fargerike retter og gode råvarer. Jeg tilbyr både tradisjonelle 
+                  og veganske menyer, alltid tilpasset anledningen og dine ønsker.
+                </p>
+                <p>
+                  Jeg jobber også som <strong className="text-turkis">yogainstruktør</strong>, der jeg 
+                  underviser både privat og hos{' '}
                   <a 
                     href="https://www.actic.no/treningssentre/asker/"
                     target="_blank"
@@ -134,17 +131,18 @@ export default function About() {
                   >
                     Actic Asker
                   </a>
-                  . Jeg brenner for å kombinere bevegelse med kreativitet.
+                  . Her kombinerer jeg bevegelse, ro og kreativitet, og skaper rom for tilstedeværelse 
+                  og balanse.
                 </p>
-                
                 <p>
-                  Som <strong className="text-turkis">sertifisert retreat chef</strong> kombinerer jeg 
-                  mat, yoga og skaperglede til helhetlige opplevelser – både i Norge og Spania.
+                  Som <strong className="text-turkis">sertifisert retreat chef</strong> forener jeg mat, 
+                  yoga og skaperglede til helhetlige opplevelser – både i Norge og internasjonalt. Enten 
+                  det er et selskap, et kreativt opphold eller et retreat, er målet alltid det samme: 
+                  å skape noe ekte og meningsfullt.
                 </p>
-                
                 <p className="text-brun font-medium pt-2">
-                  Min inspirasjon kommer fra farger, kulturer og kunstnere som Frida Kahlo – 
-                  livet skal være fargerikt, varmt og autentisk!
+                  Min inspirasjon henter jeg fra farger, kulturer og sterke uttrykk – blant annet fra 
+                  kunstnere som Frida Kahlo. Jeg tror på et liv som er fargerikt, varmt og autentisk.
                 </p>
               </div>
 
@@ -167,7 +165,6 @@ export default function About() {
         </div>
       </section>
 
-      {/* Lightbox */}
       {lightboxImage && (
         <div
           className="fixed inset-0 bg-brun/90 z-50 flex items-center justify-center p-4"

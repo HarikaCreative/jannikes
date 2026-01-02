@@ -176,27 +176,40 @@ export default function RetreatChef({ onBooking }: RetreatChefProps) {
               transition={{ duration: 0.6 }}
               className="space-y-6"
             >
-              <div className="space-y-4 text-lg text-brun/80 leading-relaxed">
+<div className="space-y-4 text-lg text-brun/80 leading-relaxed">
                 <p>
-                  <strong className="text-brun">Som en av svært få i Norden</strong> er jeg sertifisert Retreat Chef 
-                  gjennom <span className="text-cerise font-medium">Bettina's Kitchen Retreat Chef Academy</span> – 
-                  et program ledet av den anerkjente plantebaserte kokken Bettina Campolucci Bordi i London.
+                  Jeg er sertifisert Retreat Chef gjennom{' '}
+                  <a 
+                    href="https://www.bettinaskitchen.com/" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-cerise hover:text-orange underline underline-offset-2 transition-colors"
+                  >
+                    Bettina's Kitchen
+                  </a>{' '}
+                  Retreat Chef Academy i London – et anerkjent program ledet av den plantebaserte 
+                  kokken Bettina Campolucci Bordi.
                 </p>
                 
                 <p>
-                  Sertifiseringen har gitt meg spesialkompetanse innen plantebasert og næringsrik mat som nærer 
-                  både kropp og sjel – perfekt tilpasset retreat-settingen. Jeg fokuserer på sesongbaserte råvarer, 
-                  bærekraftig matlaging og å la grønnsakene være helten på tallerkenen.
+                  Som en av få i Norden har jeg hatt gleden av å fordype meg i mat laget spesielt for 
+                  retreat-settinger.
+                </p>
+
+                <p>
+                  Utdanningen har gitt meg en dypere forståelse for plantebasert og nærende mat, der smak, 
+                  farger og råvarer får stå i sentrum. Jeg lager alt fra bunnen av, med bevisste valg og 
+                  stor respekt for både ingrediensene og menneskene jeg lager mat for.
                 </p>
                 
                 <p>
-                  Jeg blir med på retreats både i <strong className="text-brun">Norge, Spania, Bali</strong> og 
-                  andre deler av verden, og tilbyr alt fra yoga-retreats til wellness-opplevelser. Maten min er 
-                  alltid plantebasert, fargerik og laget med kjærlighet.
+                  Jeg arbeider som retreat chef både i Norge, Spania og andre steder i verden, og 
+                  samarbeider med arrangører som ønsker matopplevelser som støtter ro, tilstedeværelse 
+                  og fellesskap. Maten min er alltid plantebasert, fargerik og laget med omtanke.
                 </p>
               </div>
 
-              {/* Link to Bettina's Kitchen */}
+              {/* Link to Bettina's Kitchen Chefs directory*/}
               <a
                 href="https://www.bettinaskitchen.com/chef-directory/jannike-heitun-kjuus"
                 target="_blank"
