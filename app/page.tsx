@@ -17,7 +17,7 @@ export default function HomePage() {
   return (
     <div className="min-h-screen bg-cream">
       {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-r from-turkis to-mint shadow-sm">
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-turkis shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20">
             {/* Logo */}
@@ -77,7 +77,7 @@ export default function HomePage() {
 
         {/* Mobile Menu Slide-out */}
         <div 
-          className={`md:hidden fixed inset-y-0 right-0 w-64 bg-gradient-to-b from-turkis via-turkis to-mint shadow-2xl transform transition-transform duration-300 ease-in-out z-50 ${
+          className={`md:hidden fixed inset-y-0 right-0 w-64 bg-turkis shadow-2xl transform transition-transform duration-300 ease-in-out z-50 ${
             mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
           }`}
         >
