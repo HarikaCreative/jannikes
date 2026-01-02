@@ -1,19 +1,19 @@
 import type { Metadata } from 'next'
-import { Playfair_Display, Lato } from 'next/font/google'
+import { Fraunces, DM_Sans } from 'next/font/google'
 import './globals.css'
 
-const playfair = Playfair_Display({
+const fraunces = Fraunces({
   subsets: ['latin'],
   display: 'swap',
-  variable: '--font-playfair',
+  variable: '--font-fraunces',
   weight: ['400', '500', '600', '700', '800', '900'],
 })
 
-const lato = Lato({
+const dmSans = DM_Sans({
   subsets: ['latin'],
   display: 'swap',
-  variable: '--font-lato',
-  weight: ['300', '400', '700', '900'],
+  variable: '--font-dm-sans',
+  weight: ['300', '400', '500', '600', '700'],
 })
 
 export const metadata: Metadata = {
@@ -78,11 +78,6 @@ export const metadata: Metadata = {
 
   // Manifest
   manifest: '/site.webmanifest',
-
-  // Verification (legg til dine egne koder når du har dem)
-  // verification: {
-  //   google: 'your-google-verification-code',
-  // },
 
   // Other
   category: 'food & drink',
@@ -201,7 +196,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="no" className={`${playfair.variable} ${lato.variable}`}>
+    <html lang="no" className={`${fraunces.variable} ${dmSans.variable}`}>
       <head>
         {/* Geo Tags for Local SEO */}
         <meta name="geo.region" content="NO-30" />
@@ -215,7 +210,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className={lato.className}>{children}</body>
+      <body className={dmSans.className}>{children}</body>
     </html>
   )
 }

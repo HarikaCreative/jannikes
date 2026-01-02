@@ -10,7 +10,7 @@ const config: Config = {
     extend: {
       colors: {
         mint: '#A8D5BA',
-        turkis: '#5EAAA8', // Sterkere, mer intense turkis
+        turkis: '#5EAAA8',
         brun: '#3E2723',
         cerise: '#E91E63',
         rosa: '#F06292',
@@ -20,8 +20,10 @@ const config: Config = {
         blaa: '#1565C0',
       },
       fontFamily: {
-        display: ['Playfair Display', 'serif'],
-        sans: ['Lato', 'sans-serif'],
+        // Fraunces - leken, varm serif for headings
+        display: ['var(--font-fraunces)', 'Georgia', 'serif'],
+        // DM Sans - ren, moderne for body
+        sans: ['var(--font-dm-sans)', 'system-ui', 'sans-serif'],
       },
     },
   },
