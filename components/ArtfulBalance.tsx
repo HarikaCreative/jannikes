@@ -41,27 +41,27 @@ const retreatHighlights = [
 const retreatReviews = [
   {
     id: 1,
-    name: 'Ane',
-    shortQuote: 'Hun bidrar ikke bare med nydelig mat, men også med sitt sprudlende humør og sin tilstedeværelse.',
-    fullQuote: 'Vi er så takknemlig og glad for at Jannike vil være sammen med oss på våre yogaferier i Spania. Hun har vært vår faste kokk siden 2022, og vi har også engasjert henne for våre fire yogaferier i 2026. Jannike er en utrolig dyktig kokk som byr på smakfull, næringsrik og fargerik mat som er en fryd for alle sansene. Hun har en helt spesiell evne til å bruke gode råvarer og kombinere spennende smaker. I tillegg til å være en dyktig kokk er Jannike en glede å være sammen med. Hun bidrar ikke bare med nydelig mat, men også med sitt sprudlende humør og sin tilstedeværelse for alle som er med på våre yogaferier. Hun tar seg tid til å bli kjent med våre gjester noe som både vi og gjestene våre setter stor pris på. Hun er inkluderende og inspirerende å være sammen med, og alltid til å stole på.',
+    name: 'Irene Kleven',
+    shortQuote: 'Kurset er en total opplevelse for kropp og sjel – entusiasme smitter!',
+    fullQuote: 'Kurset er en total opplevelse for kropp og sjel. Vi begynner dagen med soloppgangstur eller nydelig yoga som passer for alle. Inkluderende på alle måter. Så går vi rett over på nydelig frokost. Velsmakende, sunn og fargerik! Proppfull av god start tar vi fatt på maleoppgavene. De blir gjennomgått med energi, humor og kompetanse. Det er lett å gjøre noe under kyndig veiledning. Kari-Anne leder oss støtt inn i sitt univers. Kvelden og måltidene ler vi oss gjennom. Entusiasme smitter. Tusen takk!',
   },
   {
     id: 2,
-    name: 'Thea',
-    shortQuote: 'Helsefremmende og ikke minst fantastisk godt.',
-    fullQuote: 'Som en helsebevisst person er jeg opptatt av både kvalitet og smak når det kommer til mat. Jannikes mat får høyeste skår i begge kategorier. Laget fra bunnen med gode, naturlige råvarer. Helsefremmende og ikke minst fantastisk godt.',
+    name: 'Rita',
+    shortQuote: 'For meg var det en perfekt kombinasjon av yoga og malekurs.',
+    fullQuote: 'Turen var over all forventning. Meldte meg først og fremst på turen pga yoga. Men malekurset var en veldig positiv og inspirerende opplevelse. Du og Kari-Anne er et fargerikt team. Så inkluderende og gode. Perfekt hus hvor det er plass til sosialt samvær men også privatliv. Nydelig mat. Bare hyggelig folk. For meg var det en perfekt kombinasjon av yoga og malekurs. Gleder meg til vi sees igjen!',
   },
   {
     id: 3,
-    name: 'Anna Veronica',
-    shortQuote: 'Such a variety of flavours and options for everyone.',
-    fullQuote: 'I had the pleasure of Jannike\'s food on a three day retreat in Spain. It was amazing to say the least. The presentation, colour and choice was so impressive and the food tasted unbelievable. Such a variety of flavours and options for everyone. I ate way too much as it was just so good. Each day there was a great choice on offer and all made with so much love and passion. We all were very excited for meal times knowing how wonderful it would be. I would highly recommend Jannike\'s catering and can\'t wait to try it again.',
+    name: 'Elin Buhs',
+    shortQuote: 'Jeg har blitt inspirert til å male igjen etter en lang tørkeperiode.',
+    fullQuote: 'Jeg anbefaler varmt malekurs med Kari-Anne. Jeg har blitt inspirert til å male igjen etter en lang "tørkeperiode". Nå maler jeg flere ganger i uken. Jannike hadde rundt en time yin-yoga med oss hver morgen ved svømmebassenget. Fin måte å starte dagen på. Noen kvelder hadde vi også nidra yoga før vi la oss. Trass i at Jannike lager deilig mat til alle måltider, har det ikke gitt utslag på vekten min. Jeg trives kjempegodt i villaen i høyden ved Albir og har allerede booket samme rom til neste år. Alle damene som var med var kjempehyggelige, så det er ikke problem hvis du ikke kjenner noen fra før.',
   },
   {
     id: 4,
-    name: 'Tina L. Pedersen',
-    shortQuote: 'Det er sjelden å få servert så smakfulle kunstverk som hun lager.',
-    fullQuote: 'Etter å ha deltatt på en yogaretreat, der Jannike lagde all maten, har jeg tenkt på maten hennes i snart ett år! Det er sjelden å få servert så smakfulle kunstverk som hun lager. Anbefales på det sterkeste!',
+    name: 'Jorunn Berland Øpsen',
+    shortQuote: 'En fantastisk uke der alt stemte – anbefales på det varmeste!',
+    fullQuote: 'En fantastisk uke der alt stemte: Maleundervisning med entusiasme og engasjement, yoga som en perfekt start på dagen og fantastisk mat, drikke og hyggelig sosialt samvær. Nydelige omgivelser og ikke minst kursledere som sammen fikk alt til å bli perfekt! Anbefales på det varmeste!',
   },
 ];
 
