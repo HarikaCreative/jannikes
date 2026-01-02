@@ -55,12 +55,31 @@ export default function Contact({ showModal, onClose, onSubmit }: ContactProps) 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    
     try {
-      if (onSubmit) {
-        await onSubmit(formData);
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          navn: formData.navn,
+          epost: formData.epost,
+          telefon: formData.telefon,
+          type: formData.type,
+          melding: formData.melding,
+        }),
+      });
+
+      if (response.ok) {
+        setSubmitStatus('success');
+        setFormData({ navn: '', epost: '', telefon: '', type: '', melding: '', samtykke: false });
+        if (onSubmit) {
+          onSubmit(formData);
+        }
+      } else {
+        setSubmitStatus('error');
       }
-      setSubmitStatus('success');
-      setFormData({ navn: '', epost: '', telefon: '', type: '', melding: '', samtykke: false });
     } catch {
       setSubmitStatus('error');
     } finally {

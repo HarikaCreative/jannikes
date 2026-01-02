@@ -1,6 +1,13 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import { Bodoni_Moda } from 'next/font/google';
+
+// Bodoni Moda - kun for Hero
+const bodoni = Bodoni_Moda({ 
+  subsets: ['latin'],
+  weight: ['400', '600', '700'],
+});
 
 interface HeroProps {
   onBooking: () => void;
@@ -22,8 +29,13 @@ export default function Hero({ onBooking }: HeroProps) {
             backgroundImage: 'url(/images/artful-balance1-2025.webp)',
           }}
         />
-        {/* Soft fade to right */}
-        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent lg:via-cream/30 to-cream" />
+        {/* FORSTERKET soft fade - bredere gradient */}
+        <div 
+          className="absolute inset-0"
+          style={{
+            background: 'linear-gradient(to right, transparent 40%, rgba(255,248,225,0.3) 55%, rgba(255,248,225,0.6) 70%, rgba(255,248,225,0.85) 85%, #FFF8E1 100%)'
+          }}
+        />
       </motion.div>
 
       {/* Right - Content (40%) */}
@@ -38,9 +50,9 @@ export default function Hero({ onBooking }: HeroProps) {
         />
         
         <div className="max-w-md">
-          {/* Title - rises from bottom */}
+          {/* Title - Bodoni Moda - rises from bottom */}
           <motion.h1 
-            className="font-display text-4xl md:text-5xl lg:text-5xl font-bold text-brun leading-tight mb-2"
+            className={`${bodoni.className} text-4xl md:text-5xl lg:text-5xl font-bold text-brun leading-tight mb-2`}
             initial={{ y: 60, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.9, delay: 0.6, ease: 'easeOut' }}
@@ -48,9 +60,9 @@ export default function Hero({ onBooking }: HeroProps) {
             Jannikes verden
           </motion.h1>
           
-          {/* Tagline - rises from bottom with slight delay */}
+          {/* Tagline - Bodoni Moda - rises from bottom with slight delay */}
           <motion.h2 
-            className="font-display text-xl md:text-2xl font-bold text-brun mb-8"
+            className={`${bodoni.className} text-xl md:text-2xl font-semibold text-brun mb-8`}
             initial={{ y: 50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.9, delay: 0.9, ease: 'easeOut' }}
@@ -67,13 +79,13 @@ export default function Hero({ onBooking }: HeroProps) {
           >
             <button
               onClick={onBooking}
-              className="px-8 py-4 bg-gul hover:bg-gul/90 text-brun text-lg font-semibold rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all"
+              className="px-8 py-4 bg-cerise hover:bg-cerise/90 text-white text-lg font-semibold rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all"
             >
               Be om tilbud
             </button>
             <a
               href="#retreats"
-              className="px-8 py-4 bg-transparent border-2 border-gul text-brun text-lg font-medium rounded-full hover:bg-gul/10 transition-all text-center"
+              className="px-8 py-4 bg-transparent border-2 border-cerise text-cerise text-lg font-medium rounded-full hover:bg-cerise/10 transition-all text-center"
             >
               Opplevelser 2026
             </a>
