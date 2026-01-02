@@ -1,8 +1,7 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import Image from 'next/image';
 
 interface RetreatChefProps {
   onBooking: () => void;
@@ -45,15 +44,6 @@ export default function RetreatChef({ onBooking }: RetreatChefProps) {
   const [currentReview, setCurrentReview] = useState(0);
   const [reviewDirection, setReviewDirection] = useState(0);
   const [selectedReview, setSelectedReview] = useState<number | null>(null);
-  const [currentSpecialty, setCurrentSpecialty] = useState(0);
-
-  // Auto-rotate specialties
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentSpecialty((prev) => (prev + 1) % specialties.length);
-    }, 3000);
-    return () => clearInterval(interval);
-  }, []);
 
   const nextReview = () => {
     setReviewDirection(1);
@@ -91,15 +81,15 @@ export default function RetreatChef({ onBooking }: RetreatChefProps) {
               transition={{ duration: 0.6 }}
               className="flex flex-col items-center lg:items-start"
             >
-{/* Profile Image */}
-<div className="relative mb-8">
-  <div className="rounded-2xl overflow-hidden shadow-2xl">
-    <img
-      src="/images/profil1-jannikes-catering.webp"
-      alt="Jannike - Sertifisert Retreat Chef"
-      className="w-72 md:w-80 h-auto"
-    />
-  </div>
+              {/* Profile Image */}
+              <div className="relative mb-8">
+                <div className="rounded-2xl overflow-hidden shadow-2xl">
+                  <img
+                    src="/images/profil1-jannikes-catering.webp"
+                    alt="Jannike - Sertifisert Retreat Chef"
+                    className="w-72 md:w-80 h-auto"
+                  />
+                </div>
                 
                 {/* Decorative elements */}
                 <div className="absolute -top-6 -left-6 w-24 h-24 bg-cerise/20 rounded-full blur-2xl -z-10" />
@@ -128,45 +118,6 @@ export default function RetreatChef({ onBooking }: RetreatChefProps) {
                   Retreat Chef Academy – London
                 </p>
               </motion.div>
-
-              {/* Auto-rotating Specialties */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.3 }}
-                className="mt-6 w-full max-w-sm"
-              >
-                <p className="text-sm text-brun/60 uppercase tracking-wide mb-3">Spesialiteter</p>
-                <div className="relative h-12 overflow-hidden">
-                  <AnimatePresence mode="wait">
-                    <motion.div
-                      key={currentSpecialty}
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: -20 }}
-                      transition={{ duration: 0.4 }}
-                      className="flex items-center gap-3 bg-white/80 backdrop-blur-sm rounded-full px-5 py-3 shadow-md"
-                    >
-                      <span className="text-2xl">{specialties[currentSpecialty].icon}</span>
-                      <span className="font-medium text-brun">{specialties[currentSpecialty].text}</span>
-                    </motion.div>
-                  </AnimatePresence>
-                </div>
-                
-                {/* Specialty dots */}
-                <div className="flex justify-center gap-2 mt-3">
-                  {specialties.map((_, index) => (
-                    <button
-                      key={index}
-                      onClick={() => setCurrentSpecialty(index)}
-                      className={`w-2 h-2 rounded-full transition-all ${
-                        index === currentSpecialty ? 'bg-cerise w-6' : 'bg-brun/30'
-                      }`}
-                      aria-label={`Spesialitet ${index + 1}`}
-                    />
-                  ))}
-                </div>
-              </motion.div>
             </motion.div>
 
             {/* Right: Text Content */}
@@ -176,7 +127,7 @@ export default function RetreatChef({ onBooking }: RetreatChefProps) {
               transition={{ duration: 0.6 }}
               className="space-y-6"
             >
-<div className="space-y-4 text-lg text-brun/80 leading-relaxed">
+              <div className="space-y-4 text-lg text-brun/80 leading-relaxed">
                 <p>
                   Jeg er sertifisert Retreat Chef gjennom{' '}
                   <a 
@@ -209,7 +160,20 @@ export default function RetreatChef({ onBooking }: RetreatChefProps) {
                 </p>
               </div>
 
-              {/* Link to Bettina's Kitchen Chefs directory*/}
+              {/* Spesialiteter - Grid som ArtfulBalance */}
+              <div className="grid grid-cols-3 gap-3">
+                {specialties.map((item, index) => (
+                  <div
+                    key={index}
+                    className="bg-cerise/10 rounded-xl p-4 text-center hover:bg-cerise/20 transition-colors"
+                  >
+                    <span className="text-2xl block mb-2">{item.icon}</span>
+                    <span className="font-sans text-brun/80 text-sm font-medium">{item.text}</span>
+                  </div>
+                ))}
+              </div>
+
+              {/* Link to Bettina's Kitchen */}
               <a
                 href="https://www.bettinaskitchen.com/chef-directory/jannike-heitun-kjuus"
                 target="_blank"
@@ -236,7 +200,7 @@ export default function RetreatChef({ onBooking }: RetreatChefProps) {
 
           {/* Reviews Section - Kompakt versjon som Yoga */}
           <motion.div
-            className="bg-white/90 backdrop-blur-sm rounded-2xl p-4 md:p-6 shadow-lg border border-cerise/10 max-w-4xl mx-auto mt-16"
+            className="bg-white/90 backdrop-blur-sm rounded-2xl p-4 md:p-6 shadow-lg border border-cerise/10 max-w-4xl mx-auto"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-50px' }}
