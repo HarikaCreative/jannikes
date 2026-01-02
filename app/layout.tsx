@@ -1,19 +1,19 @@
 import type { Metadata } from 'next'
-import { Josefin_Sans, Nunito } from 'next/font/google'
+import { Raleway, Lato } from 'next/font/google'
 import './globals.css'
 
-const josefin = Josefin_Sans({
+const raleway = Raleway({
   subsets: ['latin'],
   display: 'swap',
-  variable: '--font-josefin',
+  variable: '--font-raleway',
   weight: ['300', '400', '500', '600', '700'],
 })
 
-const nunito = Nunito({
+const lato = Lato({
   subsets: ['latin'],
   display: 'swap',
-  variable: '--font-nunito',
-  weight: ['300', '400', '500', '600', '700'],
+  variable: '--font-lato',
+  weight: ['300', '400', '700', '900'],
 })
 
 export const metadata: Metadata = {
@@ -196,7 +196,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="no" className={`${josefin.variable} ${nunito.variable}`}>
+    <html lang="no" className={`${raleway.variable} ${lato.variable}`}>
       <head>
         {/* Geo Tags for Local SEO */}
         <meta name="geo.region" content="NO-30" />
@@ -210,7 +210,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className={nunito.className}>{children}</body>
+      <body className={lato.className}>{children}</body>
     </html>
   )
 }

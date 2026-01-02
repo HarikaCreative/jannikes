@@ -43,9 +43,9 @@ export default function Hero({ onBooking }: HeroProps) {
         />
         
         <div className="max-w-md">
-          {/* Title - CERISE - rises from bottom */}
+          {/* Title - Raleway SEMIBOLD - CERISE */}
           <motion.h1 
-            className="font-display text-4xl md:text-5xl lg:text-5xl font-bold text-cerise leading-tight mb-2"
+            className="font-display text-4xl md:text-5xl lg:text-5xl font-semibold text-cerise leading-tight mb-2 tracking-wide"
             initial={{ y: 60, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.9, delay: 0.6, ease: 'easeOut' }}
@@ -53,9 +53,9 @@ export default function Hero({ onBooking }: HeroProps) {
             Jannikes verden
           </motion.h1>
           
-          {/* Tagline - CERISE - rises from bottom with slight delay */}
+          {/* Tagline - Raleway LIGHT - CERISE */}
           <motion.h2 
-            className="font-display text-xl md:text-2xl font-semibold text-cerise mb-8"
+            className="font-display text-xl md:text-2xl font-light text-cerise mb-8 tracking-wide"
             initial={{ y: 50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.9, delay: 0.9, ease: 'easeOut' }}

@@ -20,10 +20,10 @@ const config: Config = {
         blaa: '#1565C0',
       },
       fontFamily: {
-        // Josefin Sans - elegant, art deco-vibe for headings
-        display: ['var(--font-josefin)', 'system-ui', 'sans-serif'],
-        // Nunito - myk, vennlig sans-serif for body
-        sans: ['var(--font-nunito)', 'system-ui', 'sans-serif'],
+        // Raleway - elegant, tynn for headings
+        display: ['var(--font-raleway)', 'system-ui', 'sans-serif'],
+        // Lato - ren, lesbar for body
+        sans: ['var(--font-lato)', 'system-ui', 'sans-serif'],
       },
     },
   },
