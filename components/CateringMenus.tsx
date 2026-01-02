@@ -694,26 +694,6 @@ anledninger.
           </motion.div>
         )}
       </AnimatePresence>
-
-      {/* Sticky CTA Button - MOBILE ONLY */}
-      {isMobile && (
-        <motion.div
-          initial={{ y: 100, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.3 }}
-          className="fixed bottom-6 right-6 z-40"
-        >
-          <button
-            onClick={onBooking}
-            className="px-8 py-4 bg-orange text-white font-bold rounded-full shadow-2xl hover:opacity-90 hover:scale-105 transition-all flex items-center gap-2"
-          >
-            Be om tilbud nå!
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-            </svg>
-          </button>
-        </motion.div>
-      )}
     </>
   );
 }
