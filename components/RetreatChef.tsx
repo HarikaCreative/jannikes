@@ -67,7 +67,7 @@ export default function RetreatChef({ onBooking }: RetreatChefProps) {
               transition={{ duration: 0.6 }}
               className="font-display text-4xl md:text-5xl font-bold text-brun mb-4"
             >
-              Sertifisert <span className="text-cerise">Retreat Chef</span>
+             <span className="text-cerise">Retreat Chef</span>
             </motion.h2>
           </div>
 
