@@ -11,7 +11,7 @@ const config: Config = {
       colors: {
         mint: '#A8D5BA',
         turkis: '#5EAAA8',
-        brun: '#3E2723',
+        brun: '#73554b',
         cerise: '#E91E63',
         rosa: '#F06292',
         gul: '#FFB300',
@@ -20,8 +20,8 @@ const config: Config = {
         blaa: '#1565C0',
       },
       fontFamily: {
-        // Raleway - elegant, tynn for headings
-        display: ['var(--font-raleway)', 'system-ui', 'sans-serif'],
+        // Playfair - elegant, tynn for headings
+        display: ['var(--font-playfair)', 'system-ui', 'Georgia', 'serif'],
         // Lato - ren, lesbar for body
         sans: ['var(--font-lato)', 'system-ui', 'sans-serif'],
       },

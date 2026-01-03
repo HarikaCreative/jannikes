@@ -24,7 +24,7 @@ export default function Hero({ onBooking }: HeroProps) {
         />
         {/* Soft fade - bred myk overgang */}
         <div 
-          className="absolute inset-0"
+          className="hidden lg:block absolute inset-0"
           style={{
             background: 'linear-gradient(to right, transparent 40%, rgba(255,248,225,0.3) 55%, rgba(255,248,225,0.6) 70%, rgba(255,248,225,0.85) 85%, #FFF8E1 100%)'
           }}

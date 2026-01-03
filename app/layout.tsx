@@ -1,11 +1,11 @@
 import type { Metadata } from 'next'
-import { Raleway, Lato } from 'next/font/google'
+import { Playfair_Display, Lato } from 'next/font/google'
 import './globals.css'
 
-const raleway = Raleway({
+const Playfair_Display = Playfair_Display({
   subsets: ['latin'],
   display: 'swap',
-  variable: '--font-raleway',
+  variable: '--font-Playfair_Display',
   weight: ['300', '400', '500', '600', '700'],
 })
 
@@ -196,7 +196,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="no" className={`${raleway.variable} ${lato.variable}`}>
+    <html lang="no" className={`${Playfair_Display.variable} ${lato.variable}`}>
       <head>
         {/* Geo Tags for Local SEO */}
         <meta name="geo.region" content="NO-30" />
