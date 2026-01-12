@@ -31,7 +31,7 @@ export default function Hero({ onBooking }: HeroProps) {
       </motion.div>
 
       {/* Right - Content (40%) - lys salvie */}
-      <div className="relative lg:col-span-2 bg-[#d4dcc9] flex items-center px-8 lg:px-12 py-12 lg:py-0">
+      <div className="relative lg:col-span-2 bg-[#d4dcc9] flex items-start px-8 lg:px-12 pt-32 lg:pt-40">
         {/* Decorative accent line */}
         <motion.div 
           className="hidden lg:block absolute top-[15%] right-0 w-1.5 h-44 bg-gradient-to-b from-[#ff8b5f] via-cerise to-[#9caf88] rounded-l"
