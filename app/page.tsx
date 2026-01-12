@@ -15,9 +15,9 @@ export default function HomePage() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <div className="min-h-screen bg-cream">
+    <div className="min-h-screen bg-sage">
       {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-turkis shadow-sm">
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-sage shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20">
             {/* Logo */}
@@ -25,7 +25,7 @@ export default function HomePage() {
               <img 
                 src="/images/android-chrome-512x512.png" 
                 alt="Jannikes Catering" 
-                className="h-16 w-16 cursor-pointer"
+                className="h-14 w-auto cursor-pointer"
               />
             </a>
 
@@ -41,10 +41,10 @@ export default function HomePage() {
                 Yoga
               </a>
               <a href="#retreats" className="text-white hover:text-cream transition-colors font-semibold">
-                Opplevelser
+                Artful Balance
               </a>
               <a href="#kontakt" className="text-white hover:text-cream transition-colors font-semibold">
-                Om Jannike / Kontakt
+                Om Jannikes
               </a>
               <button
                 onClick={() => setShowBookingModal(true)}
@@ -77,7 +77,7 @@ export default function HomePage() {
 
         {/* Mobile Menu Slide-out */}
         <div 
-          className={`md:hidden fixed inset-y-0 right-0 w-64 bg-turkis shadow-2xl transform transition-transform duration-300 ease-in-out z-50 ${
+          className={`md:hidden fixed inset-y-0 right-0 w-64 bg-sage shadow-2xl transform transition-transform duration-300 ease-in-out z-50 ${
             mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
           }`}
         >
@@ -115,7 +115,7 @@ export default function HomePage() {
               onClick={() => setMobileMenuOpen(false)}
               className="text-white hover:text-cream transition-colors font-semibold text-lg"
             >
-              Om Jannike / Kontakt
+              Om Jannikes
             </a>
             <button
               onClick={() => {

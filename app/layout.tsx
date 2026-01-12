@@ -1,31 +1,28 @@
 import type { Metadata } from 'next'
-import { Playfair_Display, Lato } from 'next/font/google'
+import { Domine, Archivo } from 'next/font/google'
 import './globals.css'
 
-const playfair = Playfair_Display({
+const domine = Domine({
   subsets: ['latin'],
   display: 'swap',
-  variable: '--font-playfair',
-  weight: ['400', '500', '600', '700', '800', '900'],
+  variable: '--font-domine',
+  weight: ['400', '500', '600', '700'],
 })
 
-const lato = Lato({
+const archivo = Archivo({
   subsets: ['latin'],
   display: 'swap',
-  variable: '--font-lato',
-  weight: ['300', '400', '700', '900'],
+  variable: '--font-archivo',
+  weight: ['300', '400', '500', '600'],
 })
 
 export const metadata: Metadata = {
-  // Basic Meta
   title: 'Jannikes Catering | Catering, Vertinne & Retreat Chef i Oslo & Asker',
   description: 'Profesjonell catering og vertinnetjenester i Oslo, Asker og Bærum. Sertifisert Retreat Chef med fokus på plantebasert, fargerik mat. Perfekt til selskaper, bryllup, jubileer og retreats.',
   keywords: 'catering Oslo, catering Asker, catering Bærum, vertinne, retreat chef Norge, plantebasert catering, vegansk catering, selskap catering, bryllup catering, tapas catering, yoga retreat mat',
   authors: [{ name: 'Jannike Heitun Kjuus' }],
   creator: 'Hárika Creative',
   publisher: 'Jannikes Catering',
-  
-  // Robots
   robots: {
     index: true,
     follow: true,
@@ -37,13 +34,9 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
-
-  // Canonical
   alternates: {
     canonical: 'https://jannikes.no',
   },
-
-  // Open Graph (Facebook, LinkedIn, etc.)
   openGraph: {
     type: 'website',
     locale: 'nb_NO',
@@ -60,30 +53,21 @@ export const metadata: Metadata = {
       },
     ],
   },
-
-  // Twitter Card
   twitter: {
     card: 'summary_large_image',
     title: 'Jannikes Catering | Catering, Vertinne & Retreat Chef',
     description: 'Profesjonell catering og vertinnetjenester i Oslo, Asker og Bærum. Fargerik mat, varme mennesker, kreative opplevelser.',
     images: ['https://jannikes.no/images/og-image.jpg'],
   },
-
-  // Icons
   icons: {
     icon: '/favicon.ico',
     shortcut: '/favicon-16x16.png',
     apple: '/apple-touch-icon.png',
   },
-
-  // Manifest
   manifest: '/site.webmanifest',
-
-  // Other
   category: 'food & drink',
 }
 
-// Schema.org JSON-LD for LocalBusiness
 const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'FoodService',
@@ -108,18 +92,9 @@ const jsonLd = {
     longitude: 10.4333,
   },
   areaServed: [
-    {
-      '@type': 'City',
-      name: 'Oslo',
-    },
-    {
-      '@type': 'City', 
-      name: 'Asker',
-    },
-    {
-      '@type': 'City',
-      name: 'Bærum',
-    },
+    { '@type': 'City', name: 'Oslo' },
+    { '@type': 'City', name: 'Asker' },
+    { '@type': 'City', name: 'Bærum' },
   ],
   priceRange: '$$',
   servesCuisine: ['Mediterranean', 'Plant-based', 'Vegan', 'Nordic'],
@@ -136,12 +111,6 @@ const jsonLd = {
         },
         price: '495',
         priceCurrency: 'NOK',
-        priceSpecification: {
-          '@type': 'UnitPriceSpecification',
-          price: '495',
-          priceCurrency: 'NOK',
-          unitText: 'per kuvert',
-        },
       },
       {
         '@type': 'Offer',
@@ -152,12 +121,6 @@ const jsonLd = {
         },
         price: '695',
         priceCurrency: 'NOK',
-        priceSpecification: {
-          '@type': 'UnitPriceSpecification',
-          price: '695',
-          priceCurrency: 'NOK',
-          unitText: 'per kuvert',
-        },
       },
       {
         '@type': 'Offer',
@@ -168,12 +131,6 @@ const jsonLd = {
         },
         price: '895',
         priceCurrency: 'NOK',
-        priceSpecification: {
-          '@type': 'UnitPriceSpecification',
-          price: '895',
-          priceCurrency: 'NOK',
-          unitText: 'per kuvert',
-        },
       },
     ],
   },
@@ -196,21 +153,18 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="no" className={`${playfair.variable} ${lato.variable}`}>
+    <html lang="no" className={`${domine.variable} ${archivo.variable}`}>
       <head>
-        {/* Geo Tags for Local SEO */}
         <meta name="geo.region" content="NO-30" />
         <meta name="geo.placename" content="Asker, Viken, Norway" />
         <meta name="geo.position" content="59.8333;10.4333" />
         <meta name="ICBM" content="59.8333, 10.4333" />
-        
-        {/* Schema.org JSON-LD */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className={lato.className}>{children}</body>
+      <body className={archivo.className}>{children}</body>
     </html>
   )
 }

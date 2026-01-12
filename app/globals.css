@@ -3,8 +3,12 @@
 @tailwind utilities;
 
 :root {
-  --font-playfair: 'Playfair Display', serif;
-  --font-lato: 'Lato', sans-serif;
+  /* Farger fra designmanualen */
+  --turkis: #85edea;
+  --rosa: #ff96ba;
+  --oransje: #ff8b5f;
+  --brun: #41281e;
+  --sage: #9caf88;
 }
 
 * {
@@ -18,12 +22,8 @@ html {
 }
 
 body {
-  color: #3E2723;
-  background: #FFF8E1;
-}
-
-.font-display {
-  font-family: var(--font-playfair);
+  color: #41281e;
+  background: #9caf88;
 }
 
 /* Custom scrollbar */
@@ -32,14 +32,14 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #FFF8E1;
+  background: #b8c9a8;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #A8D5BA;
+  background: #85edea;
   border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #8BC6B8;
+  background: #ff96ba;
 }

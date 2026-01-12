@@ -8,34 +8,33 @@ interface HeroProps {
 
 export default function Hero({ onBooking }: HeroProps) {
   return (
-    <section className="relative h-[85vh] grid grid-cols-1 lg:grid-cols-5 overflow-hidden">
-      {/* Left - Image (60%) - slides in from left */}
+    <section className="relative h-[85vh] grid grid-cols-1 lg:grid-cols-5 overflow-hidden bg-[#d4dcc9]">
+      {/* Left - Image (60%) - fullstørrelse, ikke klippet */}
       <motion.div 
-        className="relative lg:col-span-3 h-64 lg:h-full"
+        className="relative lg:col-span-3 h-64 lg:h-full flex items-center justify-center"
         initial={{ x: '-100%', opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
         transition={{ duration: 1.2, ease: 'easeOut' }}
       >
-        <div 
-          className="absolute inset-0 bg-cover bg-center"
-          style={{
-            backgroundImage: 'url(/images/artful-balance1-2025.webp)',
-          }}
+        <img 
+          src="/images/profil7-jannikes-catering.webp"
+          alt="Jannike med fargerik mat"
+          className="h-full w-auto max-w-full object-contain"
         />
-        {/* Soft fade - bred myk overgang */}
+        {/* Soft fade til høyre - lys salvie */}
         <div 
-          className="hidden lg:block absolute inset-0"
+          className="hidden lg:block absolute inset-0 pointer-events-none"
           style={{
-            background: 'linear-gradient(to right, transparent 40%, rgba(255,248,225,0.3) 55%, rgba(255,248,225,0.6) 70%, rgba(255,248,225,0.85) 85%, #FFF8E1 100%)'
+            background: 'linear-gradient(to right, transparent 50%, rgba(212,220,201,0.5) 75%, #d4dcc9 100%)'
           }}
         />
       </motion.div>
 
-      {/* Right - Content (40%) */}
-      <div className="relative lg:col-span-2 bg-cream flex items-center px-8 lg:px-12 py-12 lg:py-0">
-        {/* Decorative accent line - fades in */}
+      {/* Right - Content (40%) - lys salvie */}
+      <div className="relative lg:col-span-2 bg-[#d4dcc9] flex items-center px-8 lg:px-12 py-12 lg:py-0">
+        {/* Decorative accent line */}
         <motion.div 
-          className="hidden lg:block absolute top-[15%] right-0 w-1.5 h-44 bg-gradient-to-b from-gul via-cerise to-mint rounded-l"
+          className="hidden lg:block absolute top-[15%] right-0 w-1.5 h-44 bg-gradient-to-b from-[#ff8b5f] via-cerise to-[#9caf88] rounded-l"
           initial={{ opacity: 0, scaleY: 0 }}
           animate={{ opacity: 1, scaleY: 1 }}
           transition={{ duration: 0.8, delay: 1.5, ease: 'easeOut' }}
@@ -43,27 +42,38 @@ export default function Hero({ onBooking }: HeroProps) {
         />
         
         <div className="max-w-md">
-          {/* Title - Raleway SEMIBOLD - CERISE */}
+          {/* H1 - Jannikes i Cerise */}
           <motion.h1 
-            className="font-display text-4xl md:text-5xl lg:text-5xl font-semibold text-cerise leading-tight mb-2 tracking-wide"
+            className="font-display text-5xl md:text-6xl lg:text-7xl font-bold text-cerise leading-tight mb-6 tracking-wide"
             initial={{ y: 60, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.9, delay: 0.6, ease: 'easeOut' }}
           >
-            Jannikes verden
+            Jannikes
           </motion.h1>
           
-          {/* Tagline - Raleway LIGHT - CERISE */}
-          <motion.h2 
-            className="font-display text-xl md:text-2xl font-light text-cerise mb-8 tracking-wide"
+          {/* H2 - Usymmetrisk layout med tre farger */}
+          <motion.div 
+            className="mb-10 space-y-1"
             initial={{ y: 50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.9, delay: 0.9, ease: 'easeOut' }}
           >
-            – der sansene får farge
-          </motion.h2>
+            {/* fargerik mat - brun */}
+            <p className="font-display text-xl md:text-2xl font-medium text-brun tracking-wide">
+              fargerik mat
+            </p>
+            {/* kreative opplevelser - oransje, indent */}
+            <p className="font-display text-xl md:text-2xl font-medium text-[#ff8b5f] tracking-wide pl-8">
+              kreative opplevelser
+            </p>
+            {/* varme mennesker - brun, litt indent */}
+            <p className="font-display text-xl md:text-2xl font-medium text-brun tracking-wide pl-4">
+              varme mennesker
+            </p>
+          </motion.div>
 
-          {/* Buttons - TURKIS - rise from bottom last */}
+          {/* Buttons */}
           <motion.div
             className="flex flex-col sm:flex-row gap-4"
             initial={{ y: 40, opacity: 0 }}
@@ -72,13 +82,13 @@ export default function Hero({ onBooking }: HeroProps) {
           >
             <button
               onClick={onBooking}
-              className="px-8 py-4 bg-turkis hover:bg-turkis/90 text-white text-lg font-semibold rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all"
+              className="px-8 py-4 bg-cerise hover:bg-cerise/90 text-white text-lg font-semibold rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all"
             >
               Be om tilbud
             </button>
             <a
               href="#retreats"
-              className="px-8 py-4 bg-transparent border-2 border-turkis text-turkis text-lg font-medium rounded-full hover:bg-turkis/10 transition-all text-center"
+              className="px-8 py-4 bg-transparent border-2 border-cerise text-cerise text-lg font-medium rounded-full hover:bg-cerise/10 transition-all text-center"
             >
               Opplevelser 2026
             </a>

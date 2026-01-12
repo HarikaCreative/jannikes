@@ -57,7 +57,7 @@ export default function RetreatChef({ onBooking }: RetreatChefProps) {
 
   return (
     <>
-      <section id="retreat" className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-cream via-turkis/10 to-mint/20">
+      <section id="retreat" className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-tl from-[#9caf88] to-[#d4dcc9]">
         <div className="max-w-7xl mx-auto">
           {/* Header */}
           <div className="text-center mb-16">

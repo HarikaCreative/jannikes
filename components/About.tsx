@@ -39,7 +39,7 @@ export default function About() {
 
   return (
     <>
-      <section id="om" className="py-16 md:py-20 px-4 sm:px-6 lg:px-8 bg-cream">
+      <section id="om" className="py-16 md:py-20 px-4 sm:px-6 lg:px-8 bg-[#9caf88]">
         <div className="max-w-6xl mx-auto">
           <motion.div
             variants={staggerContainer}

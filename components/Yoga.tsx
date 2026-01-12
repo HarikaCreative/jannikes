@@ -141,7 +141,7 @@ export default function Yoga({ onBooking }: YogaProps) {
   return (
     <section
       id="yoga"
-      className="relative py-16 md:py-24 bg-gradient-to-b from-cream via-white to-mint/20 overflow-hidden"
+      className="relative py-16 md:py-24 bg-gradient-to-br from-[#9caf88] to-[#d4dcc9] overflow-hidden"
       aria-labelledby="yoga-heading"
     >
       {/* Decorative background elements */}
@@ -159,19 +159,14 @@ export default function Yoga({ onBooking }: YogaProps) {
           viewport={{ once: true, margin: '-100px' }}
           variants={staggerContainer}
         >
-          <motion.span
-            className="inline-block px-4 py-2 bg-turkis/15 text-turkis font-sans font-medium rounded-full text-sm mb-4"
-            variants={fadeInUp}
-          >
-            🧘 Yin Yoga & Yoga Nidra
-          </motion.span>
+
           {/* Overskrift med samme font som "Catering og vertinne" */}
           <motion.h2
             id="yoga-heading"
             className="font-display font-bold text-3xl md:text-4xl lg:text-5xl text-brun mb-4"
             variants={fadeInUp}
           >
-            Yin Yoga
+            Yin Yoga & Yoga Nidra
           </motion.h2>
           <motion.p
             className="font-sans text-brun/70 text-lg max-w-2xl mx-auto"

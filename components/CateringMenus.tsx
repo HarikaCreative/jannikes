@@ -279,7 +279,7 @@ export default function CateringMenus({ onBooking }: CateringMenusProps) {
 
   return (
     <>
-      <section id="catering" className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-cream via-mint/10 to-gul/10">
+      <section id="catering" className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-bl from-[#9caf88] to-[#d4dcc9]">
         <div className="max-w-7xl mx-auto">
           {/* Header */}
           <div className="text-center mb-16">

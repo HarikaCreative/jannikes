@@ -130,7 +130,7 @@ export default function ArtfulBalance({ onBooking }: ArtfulBalanceProps) {
   return (
     <section
       id="retreats"
-      className="relative py-16 md:py-24 bg-gradient-to-b from-cream via-white to-mint/20 overflow-hidden"
+      className="relative py-16 md:py-24 bg-gradient-to-tr from-[#9caf88] to-[#d4dcc9] overflow-hidden"
       aria-labelledby="retreat-heading"
     >
       {/* Decorative background elements */}

@@ -9,21 +9,27 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        mint: '#A8D5BA',
-        turkis: '#5EAAA8',
-        brun: '#73554b',
+        // === DESIGNMANUALEN ===
+        turkis: '#85edea',
+        rosa: '#ff96ba',
+        oransje: '#ff8b5f',
+        brun: '#41281e',
+        
+        // === NY BAKGRUNN (Jannikes ønske) ===
+        sage: '#9caf88',
+        
+        // === HJELPEFARGER ===
+        mint: '#aaf9f5',
+        cream: '#FFF8E1',
         cerise: '#E91E63',
-        rosa: '#F06292',
         gul: '#FFB300',
         orange: '#FF8F00',
-        cream: '#FFF8E1',
-        blaa: '#1565C0',
       },
       fontFamily: {
-        // Playfair - elegant, tynn for headings
-        display: ['var(--font-playfair)', 'system-ui', 'Georgia', 'serif'],
-        // Lato - ren, lesbar for body
-        sans: ['var(--font-lato)', 'system-ui', 'sans-serif'],
+        // Domine - fra designmanualen, for titler
+        display: ['var(--font-domine)', 'Georgia', 'serif'],
+        // Archivo - fra designmanualen, for brødtekst
+        sans: ['var(--font-archivo)', 'system-ui', 'sans-serif'],
       },
     },
   },
